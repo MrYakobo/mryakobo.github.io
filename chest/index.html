@@ -91,7 +91,13 @@
         //load from localstorage
         var previous = localStorage.getItem("chest");
         if (previous === null || previous == "undefined") {
+            //if link has a chest in it
+            if(window.location.hash){
+               previous = parseInt(window.location.substr(1));
+            }
+            else{
             previous = 0;
+            }
         }
         $("#index").val(previous);
         
