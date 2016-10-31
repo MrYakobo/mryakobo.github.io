@@ -39,6 +39,19 @@
         img{
             width: 150px;
             vertical-align: -4px;
+            transform: translateY(-4px);
+            animation: float 1s ease-in-out 1s infinite alternate;
+        }
+        @keyframes float{
+            0%{
+                transform: translateY(-4px);
+            }
+            100%{
+                transform: translateY(4px);
+            }
+        }
+        img:hover{
+            transform: translateY(-8px);
         }
 
         @media screen and (max-width: 540px) {
@@ -52,7 +65,7 @@
     <body>
         <header>
     <h1>Welcome</h1>
-        <h2>To another <img src='GitHub-Logo-White.png'> repo</h2>
+        <h2>To yet another <img src='GitHub-Logo-White.png'> repo</h2>
         <h3>made by Jakob Lindskog aka MrYakobo</h3>
             </header>
         <span>In case you're looking for my chest-tracking tool, it's right</span>
