@@ -35,13 +35,20 @@
             <h1>Chest Cycle list</h1>
             <h2>in Clash Royale</h2>
         </div>
-        <button class="general" onclick="theme()">Dark</button>
+<!--        <button class="general" onclick="theme()">Dark</button>-->
+<!--
         <script>
         function theme(){
             $("body,#table").toggleClass("dark");
         }
         </script>
-        
+-->
+        <h2 style="font-size:.6em">I will move this site to another hosting today, (2016-10-31) and as such this site may be down when you come across here again. Don't panic, it'll be back in a couple of hours (I hope)</h2>
+        <h3 style="font-size:.9em">NOTE! Your chest number is still going to be saved on your device.</h3>
+        <span>I'll be hosting <a id="link" href="http://mryakobo.github.io/chest">here</a> in the meantime.</span>
+        <script>
+            document.getElementById("link").href = "http://mryakobo.github.io/chest?" + localStorage.getItem('chest');
+        </script>
         <div class="tip"> <span>Tip! Note your current chest number here:</span>&nbsp;&nbsp;
             <p style="font-size:.6em">(will get saved on this device)</p>
             <table class="menu">

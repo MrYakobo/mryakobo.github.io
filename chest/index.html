@@ -1,0 +1,145 @@
+<html>
+
+<head>
+    <link rel="icon" href="giantchest.gif">
+    <meta name="theme-color" content="#00933e">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link async href="https://fonts.googleapis.com/css?family=Raleway:600|Roboto:900" rel="stylesheet">
+    <title>Chest Cycle List</title>
+    <link rel="stylesheet" href="new-style.css">
+<!--    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>-->
+    <script src="jquery.min.js"></script>
+</head>
+
+    <body>
+        <div class="main-title">
+            <h1>Chest Cycle list</h1>
+            <h2>in Clash Royale</h2>
+        </div>
+<!--        <button class="general" onclick="theme()">Dark</button>-->
+<!--
+        <script>
+        function theme(){
+            $("body,#table").toggleClass("dark");
+        }
+        </script>
+-->
+        <h2 style="font-size:.6em">I will move this site to another hosting today, (2016-10-31) and as such this site may be down when you come across here again. Don't panic, it'll be back in a couple of hours (I hope)</h2>
+        <h3 style="font-size:.9em">NOTE! Your chest number is still going to be saved on your device.</h3>
+        <span>I'll be hosting <a id="link" href="http://mryakobo.github.io/chest">here</a> in the meantime.</span>
+        <script>
+            document.getElementById("link").href = "http://mryakobo.github.io/chest?" + localStorage.getItem('chest');
+        </script>
+        <div class="tip"> <span>Tip! Note your current chest number here:</span>&nbsp;&nbsp;
+            <p style="font-size:.6em">(will get saved on this device)</p>
+            <table class="menu">
+                <tr>
+                    <td class="inc">
+                        <button class="minus" onclick="inc(-1)">-</button>
+                    </td>
+                    <td>
+                        <input min="0" max="239" value="0" type="number" id="index"> </td>
+                    <td class="inc">
+                        <button onclick="inc(1)">+</button>
+                    </td>
+                    <td>
+                        <table style="height:50px;width:100px">
+                            <tr id="currChest">
+                                <td>&nbsp;</td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="4">
+                        <p id="tip">&nbsp;</p>
+                    </td>
+                </tr>
+            </table>
+<!--
+            <div class="dialog minimized">
+                <h1 style="text-decoration:underline">Chest Identifier</h1>
+                <button class="close" onclick="toggle()">X</button>
+                <br>
+                <p>Have no clue about your current chest? Nemas problemas! Click on the chests below that you've gotten so far (in order).</p>
+                <div id="click">
+                    <button onclick="tag('Silver')" class="silver">Silver</button>
+                    <button onclick="tag('Gold')" class="Gold">Gold</button>
+                    <button onclick="tag('Giant')" class="Giant">Giant</button>
+                    <button onclick="tag('Magic')" class="Magic">Magic</button>
+                </div>
+                <div class="tableHolder">
+                    <table id="tot"></table>
+                </div>
+                <button style="margin:20px auto;" class="general" onclick="$('#tot').html('');toggleDisplay(true)">Clear All</button>
+                <p id="guess">&nbsp;</p> <img id="img" src="http://i.giphy.com/Ve20ojrMWiTo4.gif" style="display:none;width:100%;max-width: 300px;border-radius: 20px;border: 5px solid;padding: 2px;"> </div>
+-->
+        </div>
+<!--        <button class="general" onclick="toggle()">Don't know your current chest?</button>-->
+        <table id='table'><tr class='silver'><td>0</td><td>Silver</td></tr><tr class='silver'><td>1</td><td>Silver</td></tr><tr class='silver'><td>2</td><td>Silver</td></tr><tr class='gold'><td>3</td><td>Gold</td></tr><tr class='silver'><td>4</td><td>Silver</td></tr><tr class='silver'><td>5</td><td>Silver</td></tr><tr class='gold'><td>6</td><td>Gold</td></tr><tr class='silver'><td>7</td><td>Silver</td></tr><tr class='silver'><td>8</td><td>Silver</td></tr><tr class='silver'><td>9</td><td>Silver</td></tr><tr class='silver'><td>10</td><td>Silver</td></tr><tr class='magic'><td>11</td><td>Magic</td></tr><tr class='silver'><td>12</td><td>Silver</td></tr><tr class='silver'><td>13</td><td>Silver</td></tr><tr class='gold'><td>14</td><td>Gold</td></tr><tr class='silver'><td>15</td><td>Silver</td></tr><tr class='silver'><td>16</td><td>Silver</td></tr><tr class='silver'><td>17</td><td>Silver</td></tr><tr class='gold'><td>18</td><td>Gold</td></tr><tr class='silver'><td>19</td><td>Silver</td></tr><tr class='silver'><td>20</td><td>Silver</td></tr><tr class='silver'><td>21</td><td>Silver</td></tr><tr class='silver'><td>22</td><td>Silver</td></tr><tr class='gold'><td>23</td><td>Gold</td></tr><tr class='silver'><td>24</td><td>Silver</td></tr><tr class='gold'><td>25</td><td>Gold</td></tr><tr class='silver'><td>26</td><td>Silver</td></tr><tr class='silver'><td>27</td><td>Silver</td></tr><tr class='silver'><td>28</td><td>Silver</td></tr><tr class='silver'><td>29</td><td>Silver</td></tr><tr class='gold'><td>30</td><td>Gold</td></tr><tr class='silver'><td>31</td><td>Silver</td></tr><tr class='silver'><td>32</td><td>Silver</td></tr><tr class='silver'><td>33</td><td>Silver</td></tr><tr class='silver'><td>34</td><td>Silver</td></tr><tr class='gold'><td>35</td><td>Gold</td></tr><tr class='silver'><td>36</td><td>Silver</td></tr><tr class='silver'><td>37</td><td>Silver</td></tr><tr class='gold'><td>38</td><td>Gold</td></tr><tr class='silver'><td>39</td><td>Silver</td></tr><tr class='silver'><td>40</td><td>Silver</td></tr><tr class='silver'><td>41</td><td>Silver</td></tr><tr class='silver'><td>42</td><td>Silver</td></tr><tr class='gold'><td>43</td><td>Gold</td></tr><tr class='silver'><td>44</td><td>Silver</td></tr><tr class='silver'><td>45</td><td>Silver</td></tr><tr class='gold'><td>46</td><td>Gold</td></tr><tr class='silver'><td>47</td><td>Silver</td></tr><tr class='silver'><td>48</td><td>Silver</td></tr><tr class='silver'><td>49</td><td>Silver</td></tr><tr class='silver'><td>50</td><td>Silver</td></tr><tr class='giant'><td>51</td><td>Giant</td></tr><tr class='silver'><td>52</td><td>Silver</td></tr><tr class='silver'><td>53</td><td>Silver</td></tr><tr class='gold'><td>54</td><td>Gold</td></tr><tr class='silver'><td>55</td><td>Silver</td></tr><tr class='silver'><td>56</td><td>Silver</td></tr><tr class='silver'><td>57</td><td>Silver</td></tr><tr class='gold'><td>58</td><td>Gold</td></tr><tr class='silver'><td>59</td><td>Silver</td></tr><tr class='silver'><td>60</td><td>Silver</td></tr><tr class='silver'><td>61</td><td>Silver</td></tr><tr class='silver'><td>62</td><td>Silver</td></tr><tr class='gold'><td>63</td><td>Gold</td></tr><tr class='silver'><td>64</td><td>Silver</td></tr><tr class='gold'><td>65</td><td>Gold</td></tr><tr class='silver'><td>66</td><td>Silver</td></tr><tr class='silver'><td>67</td><td>Silver</td></tr><tr class='silver'><td>68</td><td>Silver</td></tr><tr class='silver'><td>69</td><td>Silver</td></tr><tr class='gold'><td>70</td><td>Gold</td></tr><tr class='silver'><td>71</td><td>Silver</td></tr><tr class='silver'><td>72</td><td>Silver</td></tr><tr class='silver'><td>73</td><td>Silver</td></tr><tr class='silver'><td>74</td><td>Silver</td></tr><tr class='gold'><td>75</td><td>Gold</td></tr><tr class='silver'><td>76</td><td>Silver</td></tr><tr class='silver'><td>77</td><td>Silver</td></tr><tr class='gold'><td>78</td><td>Gold</td></tr><tr class='silver'><td>79</td><td>Silver</td></tr><tr class='silver'><td>80</td><td>Silver</td></tr><tr class='silver'><td>81</td><td>Silver</td></tr><tr class='silver'><td>82</td><td>Silver</td></tr><tr class='magic'><td>83</td><td>Magic</td></tr><tr class='silver'><td>84</td><td>Silver</td></tr><tr class='silver'><td>85</td><td>Silver</td></tr><tr class='gold'><td>86</td><td>Gold</td></tr><tr class='silver'><td>87</td><td>Silver</td></tr><tr class='silver'><td>88</td><td>Silver</td></tr><tr class='silver'><td>89</td><td>Silver</td></tr><tr class='silver'><td>90</td><td>Silver</td></tr><tr class='gold'><td>91</td><td>Gold</td></tr><tr class='silver'><td>92</td><td>Silver</td></tr><tr class='silver'><td>93</td><td>Silver</td></tr><tr class='gold'><td>94</td><td>Gold</td></tr><tr class='silver'><td>95</td><td>Silver</td></tr><tr class='silver'><td>96</td><td>Silver</td></tr><tr class='silver'><td>97</td><td>Silver</td></tr><tr class='gold'><td>98</td><td>Gold</td></tr><tr class='silver'><td>99</td><td>Silver</td></tr><tr class='silver'><td>100</td><td>Silver</td></tr><tr class='silver'><td>101</td><td>Silver</td></tr><tr class='silver'><td>102</td><td>Silver</td></tr><tr class='gold'><td>103</td><td>Gold</td></tr><tr class='silver'><td>104</td><td>Silver</td></tr><tr class='gold'><td>105</td><td>Gold</td></tr><tr class='silver'><td>106</td><td>Silver</td></tr><tr class='silver'><td>107</td><td>Silver</td></tr><tr class='silver'><td>108</td><td>Silver</td></tr><tr class='silver'><td>109</td><td>Silver</td></tr><tr class='gold'><td>110</td><td>Gold</td></tr><tr class='silver'><td>111</td><td>Silver</td></tr><tr class='silver'><td>112</td><td>Silver</td></tr><tr class='silver'><td>113</td><td>Silver</td></tr><tr class='silver'><td>114</td><td>Silver</td></tr><tr class='gold'><td>115</td><td>Gold</td></tr><tr class='silver'><td>116</td><td>Silver</td></tr><tr class='silver'><td>117</td><td>Silver</td></tr><tr class='gold'><td>118</td><td>Gold</td></tr><tr class='silver'><td>119</td><td>Silver</td></tr><tr class='silver'><td>120</td><td>Silver</td></tr><tr class='silver'><td>121</td><td>Silver</td></tr><tr class='silver'><td>122</td><td>Silver</td></tr><tr class='gold'><td>123</td><td>Gold</td></tr><tr class='silver'><td>124</td><td>Silver</td></tr><tr class='silver'><td>125</td><td>Silver</td></tr><tr class='gold'><td>126</td><td>Gold</td></tr><tr class='silver'><td>127</td><td>Silver</td></tr><tr class='silver'><td>128</td><td>Silver</td></tr><tr class='silver'><td>129</td><td>Silver</td></tr><tr class='silver'><td>130</td><td>Silver</td></tr><tr class='magic'><td>131</td><td>Magic</td></tr><tr class='silver'><td>132</td><td>Silver</td></tr><tr class='silver'><td>133</td><td>Silver</td></tr><tr class='gold'><td>134</td><td>Gold</td></tr><tr class='silver'><td>135</td><td>Silver</td></tr><tr class='silver'><td>136</td><td>Silver</td></tr><tr class='silver'><td>137</td><td>Silver</td></tr><tr class='gold'><td>138</td><td>Gold</td></tr><tr class='silver'><td>139</td><td>Silver</td></tr><tr class='silver'><td>140</td><td>Silver</td></tr><tr class='silver'><td>141</td><td>Silver</td></tr><tr class='silver'><td>142</td><td>Silver</td></tr><tr class='gold'><td>143</td><td>Gold</td></tr><tr class='silver'><td>144</td><td>Silver</td></tr><tr class='gold'><td>145</td><td>Gold</td></tr><tr class='silver'><td>146</td><td>Silver</td></tr><tr class='silver'><td>147</td><td>Silver</td></tr><tr class='silver'><td>148</td><td>Silver</td></tr><tr class='silver'><td>149</td><td>Silver</td></tr><tr class='gold'><td>150</td><td>Gold</td></tr><tr class='silver'><td>151</td><td>Silver</td></tr><tr class='silver'><td>152</td><td>Silver</td></tr><tr class='silver'><td>153</td><td>Silver</td></tr><tr class='silver'><td>154</td><td>Silver</td></tr><tr class='gold'><td>155</td><td>Gold</td></tr><tr class='silver'><td>156</td><td>Silver</td></tr><tr class='silver'><td>157</td><td>Silver</td></tr><tr class='giant'><td>158</td><td>Giant</td></tr><tr class='silver'><td>159</td><td>Silver</td></tr><tr class='silver'><td>160</td><td>Silver</td></tr><tr class='silver'><td>161</td><td>Silver</td></tr><tr class='silver'><td>162</td><td>Silver</td></tr><tr class='gold'><td>163</td><td>Gold</td></tr><tr class='silver'><td>164</td><td>Silver</td></tr><tr class='silver'><td>165</td><td>Silver</td></tr><tr class='gold'><td>166</td><td>Gold</td></tr><tr class='silver'><td>167</td><td>Silver</td></tr><tr class='silver'><td>168</td><td>Silver</td></tr><tr class='silver'><td>169</td><td>Silver</td></tr><tr class='silver'><td>170</td><td>Silver</td></tr><tr class='gold'><td>171</td><td>Gold</td></tr><tr class='silver'><td>172</td><td>Silver</td></tr><tr class='silver'><td>173</td><td>Silver</td></tr><tr class='gold'><td>174</td><td>Gold</td></tr><tr class='silver'><td>175</td><td>Silver</td></tr><tr class='silver'><td>176</td><td>Silver</td></tr><tr class='silver'><td>177</td><td>Silver</td></tr><tr class='gold'><td>178</td><td>Gold</td></tr><tr class='silver'><td>179</td><td>Silver</td></tr><tr class='silver'><td>180</td><td>Silver</td></tr><tr class='silver'><td>181</td><td>Silver</td></tr><tr class='silver'><td>182</td><td>Silver</td></tr><tr class='gold'><td>183</td><td>Gold</td></tr><tr class='silver'><td>184</td><td>Silver</td></tr><tr class='gold'><td>185</td><td>Gold</td></tr><tr class='silver'><td>186</td><td>Silver</td></tr><tr class='silver'><td>187</td><td>Silver</td></tr><tr class='silver'><td>188</td><td>Silver</td></tr><tr class='silver'><td>189</td><td>Silver</td></tr><tr class='giant'><td>190</td><td>Giant</td></tr><tr class='silver'><td>191</td><td>Silver</td></tr><tr class='silver'><td>192</td><td>Silver</td></tr><tr class='silver'><td>193</td><td>Silver</td></tr><tr class='silver'><td>194</td><td>Silver</td></tr><tr class='gold'><td>195</td><td>Gold</td></tr><tr class='silver'><td>196</td><td>Silver</td></tr><tr class='silver'><td>197</td><td>Silver</td></tr><tr class='gold'><td>198</td><td>Gold</td></tr><tr class='silver'><td>199</td><td>Silver</td></tr><tr class='silver'><td>200</td><td>Silver</td></tr><tr class='silver'><td>201</td><td>Silver</td></tr><tr class='silver'><td>202</td><td>Silver</td></tr><tr class='magic'><td>203</td><td>Magic</td></tr><tr class='silver'><td>204</td><td>Silver</td></tr><tr class='silver'><td>205</td><td>Silver</td></tr><tr class='gold'><td>206</td><td>Gold</td></tr><tr class='silver'><td>207</td><td>Silver</td></tr><tr class='silver'><td>208</td><td>Silver</td></tr><tr class='silver'><td>209</td><td>Silver</td></tr><tr class='silver'><td>210</td><td>Silver</td></tr><tr class='gold'><td>211</td><td>Gold</td></tr><tr class='silver'><td>212</td><td>Silver</td></tr><tr class='silver'><td>213</td><td>Silver</td></tr><tr class='gold'><td>214</td><td>Gold</td></tr><tr class='silver'><td>215</td><td>Silver</td></tr><tr class='silver'><td>216</td><td>Silver</td></tr><tr class='silver'><td>217</td><td>Silver</td></tr><tr class='gold'><td>218</td><td>Gold</td></tr><tr class='silver'><td>219</td><td>Silver</td></tr><tr class='silver'><td>220</td><td>Silver</td></tr><tr class='silver'><td>221</td><td>Silver</td></tr><tr class='silver'><td>222</td><td>Silver</td></tr><tr class='gold'><td>223</td><td>Gold</td></tr><tr class='silver'><td>224</td><td>Silver</td></tr><tr class='gold'><td>225</td><td>Gold</td></tr><tr class='silver'><td>226</td><td>Silver</td></tr><tr class='silver'><td>227</td><td>Silver</td></tr><tr class='silver'><td>228</td><td>Silver</td></tr><tr class='silver'><td>229</td><td>Silver</td></tr><tr class='giant'><td>230</td><td>Giant</td></tr><tr class='silver'><td>231</td><td>Silver</td></tr><tr class='silver'><td>232</td><td>Silver</td></tr><tr class='silver'><td>233</td><td>Silver</td></tr><tr class='silver'><td>234</td><td>Silver</td></tr><tr class='gold'><td>235</td><td>Gold</td></tr><tr class='silver'><td>236</td><td>Silver</td></tr><tr class='silver'><td>237</td><td>Silver</td></tr><tr class='gold'><td>238</td><td>Gold</td></tr><tr class='silver'><td>239</td><td>Silver</td></tr></table>            <footer> Chest order from <a href="https://www.reddit.com/r/ClashRoyale/comments/4hm9at/new_chest_cycle_decrypted_clash_royale_132/">Reddit</a>. <span style="color:#a0a0a0">(updated May 2016)</span>
+                <br> My custom, extracted JSON-file (from the link above) that is used to generate this table is available <a href="cycle.json">here</a>. </footer>
+            <!--        </div>-->
+    </body>
+    <script>
+        var bigChests = {"11":"Magic","51":"Giant","83":"Magic","131":"Magic","158":"Giant","190":"Giant","203":"Magic","230":"Giant"};
+        var chests = ["Silver","Silver","Silver","Gold","Silver","Silver","Gold","Silver","Silver","Silver","Silver","Magic","Silver","Silver","Gold","Silver","Silver","Silver","Gold","Silver","Silver","Silver","Silver","Gold","Silver","Gold","Silver","Silver","Silver","Silver","Gold","Silver","Silver","Silver","Silver","Gold","Silver","Silver","Gold","Silver","Silver","Silver","Silver","Gold","Silver","Silver","Gold","Silver","Silver","Silver","Silver","Giant","Silver","Silver","Gold","Silver","Silver","Silver","Gold","Silver","Silver","Silver","Silver","Gold","Silver","Gold","Silver","Silver","Silver","Silver","Gold","Silver","Silver","Silver","Silver","Gold","Silver","Silver","Gold","Silver","Silver","Silver","Silver","Magic","Silver","Silver","Gold","Silver","Silver","Silver","Silver","Gold","Silver","Silver","Gold","Silver","Silver","Silver","Gold","Silver","Silver","Silver","Silver","Gold","Silver","Gold","Silver","Silver","Silver","Silver","Gold","Silver","Silver","Silver","Silver","Gold","Silver","Silver","Gold","Silver","Silver","Silver","Silver","Gold","Silver","Silver","Gold","Silver","Silver","Silver","Silver","Magic","Silver","Silver","Gold","Silver","Silver","Silver","Gold","Silver","Silver","Silver","Silver","Gold","Silver","Gold","Silver","Silver","Silver","Silver","Gold","Silver","Silver","Silver","Silver","Gold","Silver","Silver","Giant","Silver","Silver","Silver","Silver","Gold","Silver","Silver","Gold","Silver","Silver","Silver","Silver","Gold","Silver","Silver","Gold","Silver","Silver","Silver","Gold","Silver","Silver","Silver","Silver","Gold","Silver","Gold","Silver","Silver","Silver","Silver","Giant","Silver","Silver","Silver","Silver","Gold","Silver","Silver","Gold","Silver","Silver","Silver","Silver","Magic","Silver","Silver","Gold","Silver","Silver","Silver","Silver","Gold","Silver","Silver","Gold","Silver","Silver","Silver","Gold","Silver","Silver","Silver","Silver","Gold","Silver","Gold","Silver","Silver","Silver","Silver","Giant","Silver","Silver","Silver","Silver","Gold","Silver","Silver","Gold","Silver"];
+        var max = 239;
+
+        function inc(n) {
+            var currIndex = parseInt($("#index").val());
+            var newIndex = -1;
+            if (currIndex + n < 0) newIndex = max;
+            else if (currIndex + n > max) newIndex = 0;
+            else newIndex = currIndex + n;
+            $("#index").val(newIndex);
+            updateChest();
+        }
+        //load from localstorage
+        var previous = localStorage.getItem("chest");
+        if (previous === null || previous == "undefined") {
+            previous = 0;
+        }
+        $("#index").val(previous);
+        
+        setInterval(updateChest, 100);
+        var oldNumberInput = null;
+        updateChest();
+
+        function updateChest() {
+            let numberInput = $("#index").val();
+            if (numberInput !== oldNumberInput) {
+                for (var key in bigChests) {
+                    if (bigChests.hasOwnProperty(key)) {
+                        //key is index of chest, obj is the chest-type
+                        var obj = bigChests[key];
+                        var diff = key - numberInput;
+                        //if end of cycle, should cycle back (and suggest that the magic chest is next)
+                        if(numberInput >= 230){
+                            diff = 240 - numberInput + parseInt(key);
+                        }
+                        if (diff > 0) {
+                            let s = diff === 1 ? "" : "s";
+                            //Tip-chest:
+                            $("#tip").html(diff + " chest" + s + " from <table style='display:inline;'><tr class='"+obj+"'><td>" + obj + "</td></tr></table>");
+                            $("#tip").css("opacity", 1 - diff / 50);
+                            break;
+                        }
+                        else {
+                            $("#tip").html("&nbsp;");
+                        }
+                    }
+                }
+                oldNumberInput = numberInput;
+                let currChest = $($($("#table tr")[numberInput]).children()[1]).text();
+                $("#currChest").removeClass();
+                $("#currChest").addClass(currChest.toLowerCase());
+                $("#currChest").html("<td>" + currChest + "</td>");
+//                $(".active").removeClass("active");
+//                $($($("#table tr")[numberInput]).children()[2]).addClass("active");
+                localStorage.setItem("chest", numberInput);
+            }
+        }
+        $.post("visit.php");
+    </script>
+
+</html>
