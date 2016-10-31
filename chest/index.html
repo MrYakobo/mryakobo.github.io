@@ -93,7 +93,7 @@
         if (previous === null || previous == "undefined") {
             //if link has a chest in it
             if(window.location.hash){
-               previous = parseInt(window.location.substr(1));
+               previous = parseInt(window.location.hash.substr(1));
             }
             else{
             previous = 0;
