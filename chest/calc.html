@@ -1,0 +1,164 @@
+<html>
+
+<head>
+    <link rel="icon" href="giantchest.gif">
+    <meta name="theme-color" content="#00933e">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        tr{
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="text-decoration:underline">Chest Identifier</h1>
+    <br>
+    <p>Have no clue about your current chest? Nemas problemas! Click on the chests below that you've gotten so far (in order).</p>
+    <div id="click">
+        <button onclick="tag('Silver')" class="silver">Silver</button>
+        <button onclick="tag('Gold')" class="Gold">Gold</button>
+        <button onclick="tag('Giant')" class="Giant">Giant</button>
+        <button onclick="tag('Magic')" class="Magic">Magic</button>
+    </div>
+    <div class="tableHolder">
+        <table id="tot"></table>
+    </div>
+    <button style="margin:20px auto;" class="general" onclick="$('#tot').html('');toggleDisplay(true)">Clear All</button>
+    <p id="guess">&nbsp;</p> <img id="img" src="http://i.giphy.com/Ve20ojrMWiTo4.gif" style="display:none;width:100%;max-width: 300px;border-radius: 20px;border: 5px solid;padding: 2px;"> </div>
+</body>
+<script>
+    var chests;
+    $.post("cycle.json", function (data) {
+        chests = data;
+    });
+
+    function tag(type) {
+        var html = '<tr class=' + type + '><td>' + type + '</td><td><button class="remove" onclick="remove(this)">X</button></td></tr>';
+        $("#tot").html($("#tot").html() + html);
+        toggleDisplay(false);
+    }
+
+    function remove(t) {
+        $(t).parent().parent().remove();
+        if ($("#tot").text() == "") {
+            toggleDisplay(true);
+        }
+    }
+    Array.prototype.pushUnique = function (item) {
+        if (this.indexOf(item) == -1) {
+            //if(jQuery.inArray(item, this) == -1) {
+            this.push(item);
+            return true;
+        }
+        return false;
+    }
+
+    function subarray(big, small) {
+        var counter = 0;
+        var max = 1;
+        var loop = function (start) {
+            counter++;
+            for (var j = start; j < big.length; j++) {
+                var breakAll = false;
+                //If first element of the small arr matches this iteration of big (i.e we should start looking here)
+                if (small[0] == big[j]) {
+                    for (var k = 0; k < small.length; k++) {
+                        //If it doesn't line up, it's not worth running a whole loop for it
+                        if (small[k] !== big[j + k]) {
+                            break;
+                        }
+                        //If we have iterated through the whole small sequence
+                        if (k === small.length - 1) {
+                            res.pushUnique(j + small.length);
+                            //Avoiding max call stack here
+                            if (counter < max) {
+                                //Calls itself from the point that it broke. This makes sure all combinations are found
+                                loop(j + small.length);
+                            }
+                            break;
+                            breakAll = true;
+                        }
+                    }
+                }
+                if (breakAll) {
+                    break;
+                }
+            }
+        }
+        var res = [];
+        loop(0);
+        return res;
+    }
+
+    function toggleDisplay(hide) {
+        $("#img").fadeOut(200);
+        if (hide) {
+            $('#tot').css('opacity', 0);
+        }
+        else {
+            $('#tot').css('opacity', 1);
+        }
+    }
+
+    function getInput() {
+        var out = [];
+        var a = $("#tot td");
+        for (var i = 0; i < a.length; i += 2) {
+            out.push($(a[i]).text());
+        }
+        return out;
+    }
+
+    function updatePrediction() {
+        var input = getInput();
+        if (input.length === 0) {
+            $("#guess").html("");
+        }
+        else if (oldInput !== input) {
+            //                console.log(input);
+            oldInput = input;
+            var arr = getInput();
+            var guesses = subarray(chests, arr);
+            //subarray returns an array of indexes where the small array starts in the big.
+            //However, we want to offset them to the end, so we have to add arr.length to every use of elements from guesses
+            var html;
+            switch (guesses.length) {
+            case 0:
+                html = "Couldn't find any pattern that matches your input. Have you really inputted a valid combination of chests?";
+                break;
+            case 1:
+                html = "Your next chest is going to be a " + chests[guesses[0]] + " chest! (and your index will then be #" + guesses[0] + ")";
+                $("#img").fadeIn(200);
+                break;
+            default:
+                html = "Your next index could be: ";
+                if (guesses.length > 50) {
+                    html = "Please input more chests.";
+                }
+                else {
+                    for (var i = 0; i < guesses.length - 1; i++) {
+                        html += guesses[i] + ", ";
+                        //By some reason, the last element seems like always being one position too low. Inc that.
+                    }
+                    html += "or " + guesses[guesses.length - 1];
+                }
+                break;
+            }
+            if (guesses.length !== 1) {
+                $("#img").fadeOut(200);
+            }
+        }
+        $("#guess").html(html);
+    }
+    
+    var oldInput = "";
+    
+    setInterval(function () {
+        updatePrediction();
+    }, 100);
+</script>
+
+</html>

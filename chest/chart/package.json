@@ -1,0 +1,9 @@
+{
+  "name": "chart",
+  "version": "1.0",
+  "description": "This package.json exists solely to be able to use require with node.",
+  "author": "Jakob Lindskog",
+    "dependencies":{
+        "require":"latest"
+    }
+}
