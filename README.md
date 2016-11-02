@@ -1,2 +1,2 @@
 # mryakobo.github.io
-Website resporitory for my github
+Website repository for my github
