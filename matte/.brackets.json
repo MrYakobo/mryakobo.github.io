@@ -1,0 +1,8 @@
+{
+    "sass.enabled": true,
+    "sass.options": {
+        "includePaths": [],
+        "sourceComments": false,
+        "outputStyle": "compressed"
+    }
+}

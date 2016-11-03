@@ -1,0 +1,30 @@
+/*Mobile CSS*/
+@media screen and (max-width: 480px) {
+    body{
+        background: red;
+    }
+}
+/*Styling for scrollbars*/
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.08);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.38);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.67);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgb(255, 255, 255);
+}

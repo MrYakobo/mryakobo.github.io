@@ -1,0 +1,169 @@
+body {
+    font-size: 22px;
+    font-family: 'Ubuntu Mono';
+    /*    background: linear-gradient(45deg, #7c0030, #c615b8);*/
+    background: linear-gradient(45deg, #005f7c, #1567c6);
+    color: #fff;
+    margin: 0;
+}
+
+h1,
+h2 {
+    font-family: 'Lato';
+    text-align: center;
+    margin: 0px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.23);
+}
+
+h1 {
+    font-size: 3em;
+    border-bottom: 1px dashed #fff;
+}
+
+.jakoblindskog {
+    font-family: 'Galada';
+}
+
+.code {
+    text-align: left;
+    white-space: pre;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.36);
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+button {
+    vertical-align: top;
+    transform: translateY(100%);
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.28);
+    color: #fff;
+    border: 0;
+    outline: 0;
+    border-radius: 4px;
+    transition-duration: .15s;
+    font-family: 'Roboto', sans-serif;
+    font-size: .9em;
+}
+
+button:hover {
+    background: rgba(0, 0, 0, 0.61);
+}
+
+.wrapper {
+    background: rgba(0, 0, 0, 0.23);
+    clear: both;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+button::after {
+    content: attr(data-content) '';
+    position: absolute;
+    top: 25%;
+    left: 100%;
+    margin-left: 5px;
+}
+
+section {
+    /*    background: rgba(0, 0, 0, 0.38);*/
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+    margin: auto;
+    /*    border-top: 2px solid rgba(255, 255, 255, 0.12);*/
+}
+
+.header {
+    background: rgba(136, 3, 45, 0.39);
+    font-family: 'Roboto';
+    padding: 10px;
+    display: block;
+    text-align: center;
+}
+
+p.intro {
+    font-weight: 400;
+    font-family: 'Lato';
+    text-align: center;
+}
+
+i.material-icons {
+    float: left;
+    transform: translateX(50%) translateY(50%);
+    transition-duration: .25s;
+}
+
+i.minimized {
+    transform: translateX(50%) translateY(50%) rotate(180deg);
+}
+
+div.lang {
+    margin-top: 30px;
+    text-align: center;
+    transition-duration: .25s;
+    max-height: 3000px;
+}
+
+div.minimized {
+    max-height: 47px;
+    overflow: hidden;
+}
+
+span.header,
+i {
+    cursor: pointer;
+}
+
+select {
+    padding: 9px;
+    font-family: 'Lato';
+    font-size: 1em;
+    color: white;
+    margin: 20px auto;
+    display: block;
+    font-weight: 900;
+    background: rgba(0, 0, 0, 0.22);
+    outline: 0;
+    border: 0;
+    border-radius: 6px;
+}
+
+option {
+    background: rgb(13, 100, 169);
+}
+
+.choose {
+    width: 50%;
+    display: inline-block;
+    margin: 10px auto;
+    margin-left: 10px;
+    background: rgba(0, 0, 0, 0.13);
+    float: left;
+}
+
+.preview {
+    margin: 10px auto;
+    margin-right: 10px;
+    background: rgba(0, 0, 0, 0.06);
+    width: 45%;
+    overflow: hidden;
+    float: right;
+}
+
+.menu {
+    overflow: hidden;
+    background: #149948;
+    width: 80%;
+    margin: 10px auto;
+}
+.menu section{
+    width: 100%;
+}

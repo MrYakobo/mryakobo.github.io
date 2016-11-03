@@ -1,0 +1,175 @@
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <link rel="icon" href="icon.png">
+        <title>Useful code</title>
+        <link href="https://fonts.googleapis.com/css?family=Galada|Lato:900,400|Roboto:700|Ubuntu+Mono" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="scrollbar.css">
+        <script src="jquery.min.js"></script>
+        <script src="clipboard.js"></script>
+
+        <script src="highlight.pack.js"></script>
+        <link id="style" rel="stylesheet" href="styles/hopscotch.css">
+    </head>
+
+    <body>
+        <h1>Useful code</h1>
+        <!--        <p class="intro">Welcome to the Library, the place where functions gets recycled.</p>-->
+        <h2>served to you by <a class="jakoblindskog" href="http://jakoblindskog.tk">JakobLindskog<span style="font-size:.8em;color:red">.tk</span></a></h2>
+        <div class="menu lang minimized">
+            <i class="material-icons">arrow_drop_down_circle</i>
+            <span class="header" onclick="minimize(this)" style="background:#36d674">menu</span>
+            <div class="choose">
+                <h2>Choose highlight theme: </h2>
+                <select id="styleSelect" onchange="updateStyle()">
+                    <option value='styles/agate.css'>agate</option><option value='styles/androidstudio.css'>androidstudio</option><option value='styles/arduino-light.css'>arduino-light</option><option value='styles/arta.css'>arta</option><option value='styles/ascetic.css'>ascetic</option><option value='styles/atelier-cave-dark.css'>atelier-cave-dark</option><option value='styles/atelier-cave-light.css'>atelier-cave-light</option><option value='styles/atelier-dune-dark.css'>atelier-dune-dark</option><option value='styles/atelier-dune-light.css'>atelier-dune-light</option><option value='styles/atelier-estuary-dark.css'>atelier-estuary-dark</option><option value='styles/atelier-estuary-light.css'>atelier-estuary-light</option><option value='styles/atelier-forest-dark.css'>atelier-forest-dark</option><option value='styles/atelier-forest-light.css'>atelier-forest-light</option><option value='styles/atelier-heath-dark.css'>atelier-heath-dark</option><option value='styles/atelier-heath-light.css'>atelier-heath-light</option><option value='styles/atelier-lakeside-dark.css'>atelier-lakeside-dark</option><option value='styles/atelier-lakeside-light.css'>atelier-lakeside-light</option><option value='styles/atelier-plateau-dark.css'>atelier-plateau-dark</option><option value='styles/atelier-plateau-light.css'>atelier-plateau-light</option><option value='styles/atelier-savanna-dark.css'>atelier-savanna-dark</option><option value='styles/atelier-savanna-light.css'>atelier-savanna-light</option><option value='styles/atelier-seaside-dark.css'>atelier-seaside-dark</option><option value='styles/atelier-seaside-light.css'>atelier-seaside-light</option><option value='styles/atelier-sulphurpool-dark.css'>atelier-sulphurpool-dark</option><option value='styles/atelier-sulphurpool-light.css'>atelier-sulphurpool-light</option><option value='styles/atom-one-dark.css'>atom-one-dark</option><option value='styles/atom-one-light.css'>atom-one-light</option><option value='styles/brown-paper.css'>brown-paper</option><option value='styles/brown-papersq.png'>brown-papersq.png</option><option value='styles/codepen-embed.css'>codepen-embed</option><option value='styles/color-brewer.css'>color-brewer</option><option value='styles/darcula.css'>darcula</option><option value='styles/dark.css'>dark</option><option value='styles/darkula.css'>darkula</option><option value='styles/default.css'>default</option><option value='styles/docco.css'>docco</option><option value='styles/dracula.css'>dracula</option><option value='styles/far.css'>far</option><option value='styles/foundation.css'>foundation</option><option value='styles/github-gist.css'>github-gist</option><option value='styles/github.css'>github</option><option value='styles/googlecode.css'>googlecode</option><option value='styles/grayscale.css'>grayscale</option><option value='styles/gruvbox-dark.css'>gruvbox-dark</option><option value='styles/gruvbox-light.css'>gruvbox-light</option><option selected value='styles/hopscotch.css'>hopscotch (default)</option><option value='styles/hybrid.css'>hybrid</option><option value='styles/idea.css'>idea</option><option value='styles/ir-black.css'>ir-black</option><option value='styles/kimbie.dark.css'>kimbie.dark</option><option value='styles/kimbie.light.css'>kimbie.light</option><option value='styles/magula.css'>magula</option><option value='styles/mono-blue.css'>mono-blue</option><option value='styles/monokai-sublime.css'>monokai-sublime</option><option value='styles/monokai.css'>monokai</option><option value='styles/obsidian.css'>obsidian</option><option value='styles/ocean.css'>ocean</option><option value='styles/paraiso-dark.css'>paraiso-dark</option><option value='styles/paraiso-light.css'>paraiso-light</option><option value='styles/pojoaque.css'>pojoaque</option><option value='styles/pojoaque.jpg'>pojoaque.jpg</option><option value='styles/purebasic.css'>purebasic</option><option value='styles/qtcreator_dark.css'>qtcreator_dark</option><option value='styles/qtcreator_light.css'>qtcreator_light</option><option value='styles/railscasts.css'>railscasts</option><option value='styles/rainbow.css'>rainbow</option><option value='styles/school-book.css'>school-book</option><option value='styles/school-book.png'>school-book.png</option><option value='styles/solarized-dark.css'>solarized-dark</option><option value='styles/solarized-light.css'>solarized-light</option><option value='styles/sunburst.css'>sunburst</option><option value='styles/tomorrow-night-blue.css'>tomorrow-night-blue</option><option value='styles/tomorrow-night-bright.css'>tomorrow-night-bright</option><option value='styles/tomorrow-night-eighties.css'>tomorrow-night-eighties</option><option value='styles/tomorrow-night.css'>tomorrow-night</option><option value='styles/tomorrow.css'>tomorrow</option><option value='styles/vs.css'>vs</option><option value='styles/xcode.css'>xcode</option><option value='styles/xt256.css'>xt256</option><option value='styles/zenburn.css'>zenburn</option>                </select>
+            </div>
+            <div class="preview">
+                <h2>Preview:</h2>
+                <div class="code">
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      }
+                </div>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class='lang minimized' style='background:#008181'><i class='material-icons'>arrow_drop_down_circle</i><span class='header' onclick='minimize(this)' style='background:#009a9a'>css</span><div class='code'>/*Mobile CSS*/
+@media screen and (max-width: 480px) {
+    body{
+        background: red;
+    }
+}
+/*Styling for scrollbars*/
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.08);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.38);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.67);
+}
+
+::-webkit-scrollbar-thumb:active {
+    background: rgb(255, 255, 255);
+}</div></div><div class='lang minimized' style='background:#400081'><i class='material-icons'>arrow_drop_down_circle</i><span class='header' onclick='minimize(this)' style='background:#4d009a'>html</span><div class='code'>&lt;!--Common tags for mobile optimization--&gt;
+&lt;meta name=&quot;theme-color&quot; content=&quot;#0066b1&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;meta charset=&quot;utf-8&quot;&gt;
+&lt;link rel=&quot;icon&quot; href=&quot;icon.png&quot;&gt;</div></div><div class='lang minimized' style='background:#810040'><i class='material-icons'>arrow_drop_down_circle</i><span class='header' onclick='minimize(this)' style='background:#9a004d'>javascript</span><div class='code'>/*Share-metoden i index.html (FXtend Voice)*/
+function share(){
+        var url = &quot;http://fxtend.gq/Voice/message.php?&quot;;
+        var d = document.getElementById(&quot;textInput&quot;).value;
+        
+        $.post(&quot;save-json.php&quot;,{content:d},function(data){
+            document.getElementById(&quot;url&quot;).innerHTML = url+data;
+            SelectText(&quot;url&quot;);
+        });
+}
+</div><div class='code'>
+/*Useful shorthand for for-loops, Copyright Josef Karlsson @ fxtend.gq*/
+/*Usage: while(f(max-value)){
+Your code here
+}*/
+function f(n){return n&gt;i?(i++,!0):(i=0,!1)}var i=-1;</div></div><div class='lang minimized' style='background:#812100'><i class='material-icons'>arrow_drop_down_circle</i><span class='header' onclick='minimize(this)' style='background:#9a2700'>php</span><div class='code'>/*message.php (FXtend Voice)*/
+//Deklarera text utifrån vad servern returnerar
+text = &quot;&amp;lt;?php echo json_decode(file_get_contents(&quot;messages.json&quot;),true)[key($_GET)]?&amp;gt;&quot;;
+</div><div class='code'>
+/*save-json.php (FXtend Voice)*/
+//Import JSON
+$json = json_decode(file_get_contents(&quot;messages.json&quot;),true);
+//If the JSON-file was empty, instance $json to array
+if(!is_array($json)){
+    $json = [];
+}
+
+function getRandomKey(){
+    //Generate key
+    $rand = substr(md5(rand()), 0, 4);
+    //If it doesn't exist already, return it
+    if(!array_key_exists($rand,$GLOBALS[&quot;json&quot;]))
+        return $rand;
+    //Otherwise, return a new key
+    return getRandomKey();
+}
+
+$key = getRandomKey();
+$json[$key] = $_POST[&quot;content&quot;];
+file_put_contents(&quot;messages.json&quot;,json_encode($json));
+echo $key;
+</div><div class='code'>
+/*Dumps an array to a table*/
+function dump($arr){
+    echo &amp;quot;&amp;lt;table&amp;gt;&amp;quot;;
+    foreach($arr as $key =&amp;gt; $element){
+        echo &amp;quot;&amp;lt;tr&amp;gt;&amp;quot;;
+        if(is_array($element)){
+            foreach($element as $k =&amp;gt; $e){
+                echo &amp;quot;&amp;lt;td style='background:#ff0'&amp;gt;$k&amp;lt;/td&amp;gt;&amp;lt;td&amp;gt;$e&amp;lt;/td&amp;gt;&amp;quot;;
+            }
+        }
+        else
+            echo &amp;quot;&amp;lt;td&amp;gt;$key&amp;lt;/td&amp;gt;&amp;lt;td&amp;gt;$element&amp;lt;/td&amp;gt;&amp;quot;;
+        echo &amp;quot;&amp;lt;/tr&amp;gt;&amp;quot;;
+    }
+    echo &amp;quot;&amp;lt;/table&amp;gt;&amp;quot;;
+}
+</div><div class='code'>
+/*Outputs a variable in h1-tags*/
+function h1($str){
+    echo &amp;quot;&amp;lt;h1&amp;gt;$str&amp;lt;/h1&amp;gt;&amp;quot;;
+}
+</div><div class='code'>
+/*Searches Google images for a string and returns the first image*/
+function google($s) {
+    $s = str_replace(&quot; &quot;,&quot;+&quot;,str_replace(&quot;%20&quot;,&quot;+&quot;,$s));
+    $url = file_get_contents(&quot;https://www.google.com/search?q=$s&quot;);
+    $retValue = explode('&quot;',explode('src=&quot;',$url)[2])[0];
+    return $retValue;
+}</div></div>        </div>
+    </body>
+    <script>
+        function updateStyle() {
+            $('#style').attr('href', $('#styleSelect').val());
+        }
+
+        function minimize(o) {
+
+            $($(o).parent()).toggleClass("minimized");
+            $($(o).parent()).children("i").toggleClass("minimized");
+        }
+        $(".code").each(function (i, o) {
+            $(o).attr("id", "code" + i);
+            $(o).wrap("<section></section>");
+//            $(o).after("<button data-content='' data-clipboard-target='#code" + i + "'>Copy to clipboard</button>");
+            hljs.highlightBlock(o);
+        });
+        var c = new Clipboard("button");
+        c.on("success", function (e) {
+            e.clearSelection();
+            $(e.trigger).attr("data-content", "Copied!");
+            setTimeout(function () {
+                $(e.trigger).attr("data-content", "");
+            }, 2500);
+        })
+    </script>
+
+</html>
