@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#db5945">
     <link rel="icon" href="github-logo-cat.png">
-
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <style>
         body{
             font-family: 'Segoe UI Light','Ubuntu Light',sans-serif;
@@ -29,6 +29,7 @@
         a{
             color: #fff;
             font-family: 'Segoe UI','Ubuntu',sans-serif;
+            margin: 3px;
         }
         header{
             background: linear-gradient(#68ff9c,#44ddae);
@@ -69,6 +70,24 @@
         <h3>made by Jakob Lindskog aka MrYakobo</h3>
             </header>
         <span>In case you're looking for my chest-tracking tool, it's right</span>
-        <a href="chest/">here</a>.
+        <a href="http://jakoblindskog.tk/chest">here</a>.<br>
+        <h3>My other stuff on this site includes:</h3>
+        <div id="sitemap" style="display:none"></div>
+        <script type="text/javascript">
+        var link = "https://api.github.com/repos/MrYakobo/mryakobo.github.io/git/trees/3bb4cf12f9359d470c00ec0f6f5504e4c32dc74a";
+ 
+        $.get(link,function(data){
+            var a = data.tree;
+            var html = "";
+            a.forEach(function(o,i){
+                o = o.path;
+                if(o.indexOf('.')<0 && o !== "CNAME" && o !== "chest"){
+                    html += "<a href='http://jakoblindskog.tk/"+o+"/'>"+o+"</a>";
+                }
+            });
+            $("#sitemap").html(html);
+            $("#sitemap").delay(200).fadeIn(2000);
+        });
+    </script>
     </body>
 </html>
