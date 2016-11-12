@@ -89,34 +89,7 @@ function share(){
 /*Usage: while(f(max-value)){
 Your code here
 }*/
-function f(n){return n&gt;i?(i++,!0):(i=0,!1)}var i=-1;</div></div><div class='lang minimized' style='background:#812100'><i class='material-icons'>arrow_drop_down_circle</i><span class='header' onclick='minimize(this)' style='background:#9a2700'>php</span><div class='code'>/*message.php (FXtend Voice)*/
-//Deklarera text utifrån vad servern returnerar
-text = &quot;&amp;lt;?php echo json_decode(file_get_contents(&quot;messages.json&quot;),true)[key($_GET)]?&amp;gt;&quot;;
-</div><div class='code'>
-/*save-json.php (FXtend Voice)*/
-//Import JSON
-$json = json_decode(file_get_contents(&quot;messages.json&quot;),true);
-//If the JSON-file was empty, instance $json to array
-if(!is_array($json)){
-    $json = [];
-}
-
-function getRandomKey(){
-    //Generate key
-    $rand = substr(md5(rand()), 0, 4);
-    //If it doesn't exist already, return it
-    if(!array_key_exists($rand,$GLOBALS[&quot;json&quot;]))
-        return $rand;
-    //Otherwise, return a new key
-    return getRandomKey();
-}
-
-$key = getRandomKey();
-$json[$key] = $_POST[&quot;content&quot;];
-file_put_contents(&quot;messages.json&quot;,json_encode($json));
-echo $key;
-</div><div class='code'>
-/*Dumps an array to a table*/
+function f(n){return n&gt;i?(i++,!0):(i=0,!1)}var i=-1;</div></div><div class='lang minimized' style='background:#812100'><i class='material-icons'>arrow_drop_down_circle</i><span class='header' onclick='minimize(this)' style='background:#9a2700'>php</span><div class='code'>/*Dumps an array to a table*/
 function dump($arr){
     echo &amp;quot;&amp;lt;table&amp;gt;&amp;quot;;
     foreach($arr as $key =&amp;gt; $element){

@@ -1,30 +1,3 @@
-/*message.php (FXtend Voice)*/
-//Deklarera text utifrån vad servern returnerar
-text = "&lt;?php echo json_decode(file_get_contents("messages.json"),true)[key($_GET)]?&gt;";
------
-/*save-json.php (FXtend Voice)*/
-//Import JSON
-$json = json_decode(file_get_contents("messages.json"),true);
-//If the JSON-file was empty, instance $json to array
-if(!is_array($json)){
-    $json = [];
-}
-
-function getRandomKey(){
-    //Generate key
-    $rand = substr(md5(rand()), 0, 4);
-    //If it doesn't exist already, return it
-    if(!array_key_exists($rand,$GLOBALS["json"]))
-        return $rand;
-    //Otherwise, return a new key
-    return getRandomKey();
-}
-
-$key = getRandomKey();
-$json[$key] = $_POST["content"];
-file_put_contents("messages.json",json_encode($json));
-echo $key;
------
 /*Dumps an array to a table*/
 function dump($arr){
     echo &quot;&lt;table&gt;&quot;;
