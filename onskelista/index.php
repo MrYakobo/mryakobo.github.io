@@ -17,7 +17,7 @@
         <h1>Jakobs önskelista</h1>
         <ul>
         <?php
-        $wishes = ["Fred på jorden","Kul tshirt","Nespresso-maskin (ej viktigt att den e ny eller dyr)","Wunderbaum (äpplesmak! Viktigt)","Kalsingar","Jacka? (ej så viktigt, endast förslag)"];
+        $wishes = ["Old Spice","Fred på jorden","Kul tshirt","Nespresso-maskin (ej viktigt att den e ny eller dyr)","Wunderbaum (äpplesmak! Viktigt)","Kalsingar","Jacka? (ej så viktigt, endast förslag)"];
         foreach($wishes as $w){
             ?>
             <li><?= $w ?></li>
