@@ -1,3 +1,29 @@
 body{
-    font-family: 
+    font-family: 'Droid Sans';
+    text-align: center;
+    font-size: 40px;
+    margin: 0;
+    background: #ffcd6e;
+    color: #15a552;
+}
+h1{
+    text-decoration: underline;
+    color: #9b3a1c;
+    border-bottom: 2px dotted;
+}
+.wrapper{
+    background: #ffe7ba;
+    overflow: hidden;
+    padding-bottom: 30px;
+    border-bottom: 4px solid #e0af53;
+}
+ul{
+    list-style: none;
+    text-align: left;
+    display: inline-block;
+    margin: auto;
+}
+li{
+    padding: 4px;
+    border-bottom: 1px dashed #000;
 }
