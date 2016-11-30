@@ -1,79 +1,92 @@
 <html>
+
 <head>
-    <title>Jakob Lindskog's Github</title>
+    <title>JakobLindskog.tk</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#db5945">
     <link rel="icon" href="github-logo-cat.png">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <style>
-        body{
-            font-family: 'Segoe UI Light','Ubuntu Light',sans-serif;
+        body {
+            font-family: 'Segoe UI Light', 'Ubuntu Light', sans-serif;
             font-size: 25px;
             text-align: center;
-            background: linear-gradient(#14e67d,#3cd091);
+            background: linear-gradient(#14e67d, #3cd091);
             color: #fff;
             margin: 0;
         }
-        h1,h2,h3{
+        
+        h1,
+        h2,
+        h3 {
             margin: 10px auto;
         }
-        h1{
+        
+        h1 {
             font-size: 4em;
         }
-        h2{
+        
+        h2 {
             font-size: 2em;
         }
-        h3{
+        
+        h3 {
             font-size: 1.15em;
         }
-        a{
+        
+        a {
             color: #fff;
-            font-family: 'Segoe UI','Ubuntu',sans-serif;
+            font-family: 'Segoe UI', 'Ubuntu', sans-serif;
             margin: 3px;
         }
-        header{
-            background: linear-gradient(#68ff9c,#44ddae);
+        
+        header {
+            background: linear-gradient(#68ff9c, #44ddae);
             border-bottom: 2px solid #fff;
             border-top: 2px solid #fff;
             margin-bottom: 30px;
         }
-        img{
+        
+        img {
             width: 150px;
             vertical-align: -4px;
             transform: translateY(-4px);
             animation: float 1s ease-in-out 1s infinite alternate;
         }
-        @keyframes float{
-            0%{
+        
+        @keyframes float {
+            0% {
                 transform: translateY(-4px);
             }
-            100%{
+            100% {
                 transform: translateY(4px);
             }
         }
-        img:hover{
+        
+        img:hover {
             transform: translateY(-8px);
         }
-
+        
         @media screen and (max-width: 540px) {
-            body{
+            body {
                 font-size: 20px;
             }
         }
-
     </style>
-    </head>
-    <body>
-        <header>
-    <h1>Welcome</h1>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome</h1>
         <h2>To yet another <img src='GitHub-Logo-White.png'> repo</h2>
         <h3>made by Jakob Lindskog aka MrYakobo</h3>
-            </header>
-        <span>In case you're looking for my chest-tracking tool, it's right</span>
-        <a href="http://jakoblindskog.tk/chest">here</a>.<br>
-        <h3>My other stuff on this site includes:</h3>
-        <div id="sitemap" style="display:none"></div>
-        <script type="text/javascript">
+        <a href="https://folkbibeln.herokuapp.com/">Btw, SFB is right here.</a>
+    </header>
+    <span>In case you're looking for my chest-tracking tool, it's right</span>
+    <a href="http://jakoblindskog.tk/chest">here</a>.<br>
+    <h3>My other stuff on this site includes:</h3>
+    <div id="sitemap" style="display:none"></div>
+    <script type="text/javascript">
         var link = "https://api.github.com/repos/MrYakobo/mryakobo.github.io/git/trees/3bb4cf12f9359d470c00ec0f6f5504e4c32dc74a";
  
         $.get(link,function(data){
@@ -89,5 +102,5 @@
             $("#sitemap").delay(200).fadeIn(2000);
         });
     </script>
-    </body>
+</body>
 </html>
