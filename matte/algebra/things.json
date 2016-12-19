@@ -1,0 +1,151 @@
+{
+    "Utsagor":
+    {
+        "Utsaga":[
+        "Kan vara Sann eller Falsk, Öppen eller sluten",[
+            "2x + 5 är ingen utsaga",
+            "x² + y² = 5 är en öppen utsaga",
+            "4 ≥ 3 är en sluten, sann utsaga"
+        ]
+    ],
+        "Negationer":[
+            "Negationen till utsagan A betecknas ¬A, och är motsatsen till A.",[
+                "A: x ≥ 2 ⇒ ¬A: x < 2"
+            ]
+        ],
+        "Konjunktion":[
+            "A∧B är sant om A och B är sanna."
+        ],
+        "Disjunktion":[
+            "A∨B är sant om A eller B är sanna."
+        ],
+        "Tautologi":[
+            "En sammansatt utsaga är en tautologi/kontradiktion om den alltid är sann/falsk oberoende av de ingående utsagornas sanningsvärde.",
+            [
+                "(¬A∧(A∨B))∨A är varken tautologi eller kontradiktion. Se bild nedan:",
+                "tautologi.PNG"
+            ]
+        ],
+        "Implikation och ekvilalens":[
+            "Utsagan A ⇒ B (medför, om ... så är) kallas en implikation.",
+            "A kallas förutsättning (premiss, hypotes) och B kallas slutsats (konsekvens)",
+            [
+            "implikationer.PNG",
+            "ekvivalenstabell.PNG"
+            ]
+        ],
+        "Kvantorer":[
+            "∀: ”För varje”, ”för alla”",
+            "∃: ”Det finns (existerar) en/ett”",
+            [
+                "Utsagan A: ”Alla hundar kan skälla” kan skrivas som A: ∀ hund; hunden kan skälla",
+                "B: Det finns ett reellt tal x sådant att 2x = 4.<br>B: ∃ x ∈ R:2x = 4"
+
+            ]
+        ]
+    },
+    "Mängder":{
+        "Viktiga begrepp om mängder":[
+            "Antalet element i en mängd A kallas mängdens kardinalitet och betecknas |A|.",
+            "Två mängder är lika om de innehåller samma element.",
+            "Den tomma mängden ∅ innehåller inga element.",
+            "Det finns alltid en grundmängd eller universum U."
+        ],
+        "Snitt och Union":[
+            "snittochunion.PNG"
+        ],
+        "Mängddifferens och Produktmängd":[
+            "mangddifferens.PNG"
+        ]
+    },
+    "Induktion":{
+        "Induktionsstegen":[
+            "Ett påstående skall bevisas med hjälp av induktion, beroende på n.",
+            "Om påståendet är sant för `n = 1` och `n = p` är det också sant för `n = p + 1`. Enligt induktionsaxiomet är därför påståendet sant för alla n ≥ 1.",
+            [
+                "induktion.PNG"
+            ]
+        ]
+    },
+    "Delbarhet":{
+        "Euklides":[
+            "euklides.PNG"
+        ],
+        "Diofantiska ekvationer":[
+            "Den diofantiska ekvationen `ax + by = c` har heltalslösningar OMM `SGD(a,b) | c`",
+            [
+                "diofantisk.PNG"
+            ]
+        ],
+        "Ekvivalensklasser":[
+            "Två tal `a` och `b` tillhör samma ekvivalensklass om `a ≡ b (mod n)`, dvs de har samma rest vid division med `n`.",
+            [
+                "restklass.PNG"
+            ]
+        ],
+        "Multiplikativ invers":[
+            "multiplikativ_invers.PNG"
+        ]
+    },
+    "Kombinatorik":{
+        "Permutationer":[
+            "#permutationer är #sätt att ordna en mängd med hänsyn till ordningen, `n!`"
+        ],
+        "\"Bulleformeln\"":[
+            "bulleformeln.PNG"
+        ]
+    },
+    "Grafer":{
+        "Allmän grafteori":[
+            "&sum;(∀ noders grad) = 2*(antal kanter)",
+        [
+            "grannmatris.PNG",
+            "eulerkrets.PNG",
+            "kromatiskt.PNG"
+        ],
+        "Om man vill optimera det kromatiska talet så bör man börja färga i mitten."
+        ]
+    },
+    "Relationer och funktioner":{
+        "Funktion":[
+            "funktion.PNG"
+        ],
+        "Begrepp":[
+            "En funktion är `injektiv` om det för varje y finns högst ett x.",
+            "En funktion är `surjektiv` om det för varje y finns minst ett x.",
+            "En funktion är `bijektiv` (och `inverterbar`) om det för varje y finns exakt ett x.",
+            ["inverterbar.PNG"],
+            "Den `Cartesiska produkten` av två mängder är alla element som finns i båda mängderna."
+        ],
+        "Relationer":[
+            "relationerdef.PNG",
+            "En `ekvivalensrelation` på A är reflexiv, symmetrisk och transitiv",
+            "En `partiell ordningsrelation` på A är reflexiv, antisymmerisk och transitiv"
+        ],
+        "Faktorsatsen":[
+            "Om r är en rot till polynomet f(x) så är `(x-r)` en  faktor i f(x).",
+            "faktorsatsen.PNG",
+            [
+                "faktorsatsenExempel.PNG"
+            ]
+        ],
+        "Geometrisk Summa":[
+            "geometrisksumma.PNG"
+        ],
+        "Rationella funktioner":[
+            "Om en funktion f(x) kan bli odefinierad (ex 0 i nämnaren) så kallas det för en `rationell funktion`",
+            "rationellfunktion.PNG"
+        ],
+        "Teckenstudium":[
+            "Teckenstudium bör göras när en relation såsom bilden nedan skall undersökas.",
+            "teckenstudiumfunktion.PNG",
+            "teckenstudium.PNG"
+        ]
+    },
+    "Vinklar":{
+        "VIKTIGA VINKLAR":[
+            "<table><thead><th>Vinkel<th>sin<th>cos</thead><tr><td>π/6<td>½<td>√3/2<tr><td>π/4<td>1/√2<td>1/√2<tr><td>π/3<td>√3/2<td>½<tr><td>π/2<td>1<td>0</table>",
+            "viktigavinklar.PNG"
+        ]
+    }
+}
