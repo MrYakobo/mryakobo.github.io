@@ -1,107 +1,33 @@
-﻿
+<!DOCTYPE html>
 <html>
 
 <head>
-    <title>JakobLindskog.tk</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#db5945">
-    <link rel="icon" href="github-logo-cat.png">
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <style>
-        body {
-            font-family: 'Segoe UI Light', 'Ubuntu Light', sans-serif;
-            font-size: 25px;
-            text-align: center;
-            background: linear-gradient(#14e67d, #3cd091);
-            color: #fff;
-            margin: 0;
-        }
-        
-        h1,
-        h2,
-        h3 {
-            margin: 10px auto;
-        }
-        
-        h1 {
-            font-size: 4em;
-        }
-        
-        h2 {
-            font-size: 2em;
-        }
-        
-        h3 {
-            font-size: 1.15em;
-        }
-        
-        a {
-            color: #fff;
-            font-family: 'Segoe UI', 'Ubuntu', sans-serif;
-            margin: 3px;
-        }
-        
-        header {
-            background: linear-gradient(#68ff9c, #44ddae);
-            border-bottom: 2px solid #fff;
-            border-top: 2px solid #fff;
-            margin-bottom: 30px;
-        }
-        
-        img {
-            width: 150px;
-            vertical-align: -4px;
-            transform: translateY(-4px);
-            animation: float 1s ease-in-out 1s infinite alternate;
-        }
-        
-        @keyframes float {
-            0% {
-                transform: translateY(-4px);
-            }
-            100% {
-                transform: translateY(4px);
-            }
-        }
-        
-        img:hover {
-            transform: translateY(-8px);
-        }
-        
-        @media screen and (max-width: 540px) {
-            body {
-                font-size: 20px;
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="assets/dist/css/materialize.min.css" media="screen,projection" />
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
 
-<body>
-    <header>
-        <h1>Welcome</h1>
-        <h2>To yet another <img src='GitHub-Logo-White.png'> repo</h2>
-        <h3>made by Jakob Lindskog aka MrYakobo</h3>
-        <a href="https://folkbibeln.herokuapp.com/">Btw, SFB is right here.</a>
-    </header>
-    <span>In case you're looking for my chest-tracking tool, it's right</span>
-    <a href="http://jakoblindskog.tk/chest">here</a>.<br>
-    <h3>My other stuff on this site includes:</h3>
-    <div id="sitemap" style="display:none"></div>
-    <script type="text/javascript">
-        var link = "https://api.github.com/repos/MrYakobo/mryakobo.github.io/git/trees/3bb4cf12f9359d470c00ec0f6f5504e4c32dc74a";
- 
-        $.get(link,function(data){
-            var a = data.tree;
-            var html = "";
-            a.forEach(function(o,i){
-                o = o.path;
-                if(o.indexOf('.')<0 && o !== "CNAME" && o !== "chest"){
-                    html += "<a href='http://jakoblindskog.tk/"+o+"/'>"+o+"</a>";
-                }
-            });
-            $("#sitemap").html(html);
-            $("#sitemap").delay(200).fadeIn(2000);
-        });
+<body class="valign-wrapper">
+  <main class="container z-depth-1 valign">
+    <h2 class="card-panel teal lighten-2 white-text z-depth-1">Hej. Det här är jag.</h2>
+    <img class="materialboxed circle width" width="250" src="assets/img/parallax1.jpg">
+    <div class="card-panel yellow darken-1 white-text z-depth-1">
+      <h4>Det här är en snygg panel.</h4>
+      <p>Och här är en till snygg bild på mig</p><img class="center-align materialboxed circle width" width="250" src="new/img/parallax2.jpg">
+    </div>
+  </main>
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="assets/dist/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('.parallax').parallax();
+    });
     </script>
 </body>
+
 </html>
