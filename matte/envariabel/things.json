@@ -1,12 +1,13 @@
 {
-    "Utsagor":
+    "title":"Envariabelanalys",
+    "Gränsvärden":
     {
-        "Utsaga":[
-        "Kan vara Sann eller Falsk, Öppen eller sluten",[
-            "2x + 5 är ingen utsaga",
-            "x² + y² = 5 är en öppen utsaga",
-            "4 ≥ 3 är en sluten, sann utsaga"
-        ]
+        "Kontinuitet":[
+            "En funktion f är kontinuerlig om den \"hänger ihop\".",
+        "kontinuitet.PNG"
+    ],
+    "Derivata":[
+        "derivata.PNG"
     ],
         "Negationer":[
             "Negationen till utsagan A betecknas ¬A, och är motsatsen till A.",[
