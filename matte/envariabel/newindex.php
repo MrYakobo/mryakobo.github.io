@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <style>
         img {
+            max-width: 100%;
             margin: auto;
             margin-top: 30px;
             border-radius: 10px;
@@ -27,15 +28,19 @@
             border-radius: 2px;
             padding: 2px;
         }
+
+        span.flow-text{
+            vertical-align: 100%;
+        }
     </style>
 </head>
 
-<body class="container center-align teal lighten-4 white-text">
+<body style="width:100%;" class="container center-align teal lighten-4 white-text">
     <?php
         $j = json_decode(file_get_contents("things.json"),true);
         $title = $j["title"];
         unset($j["title"]);
-        echo "<h1 class='card-panel indigo z-depth-1'>$title</h1>";
+        echo "<h2 class='card-panel indigo darken-2 z-depth-1'>$title</h2>";
         foreach($j as $topic => $props){
             echo "<div class='row card-panel teal'>";
             echo "<h2>$topic</h2>";
@@ -52,10 +57,10 @@
                         foreach($value as $example){
                             //If this example is an image
                             if(strpos($example, '.PNG') !== false){
-                                echo "<img class='materialboxed' src='img/$example'>";
+                                echo "<img src='img/$example'>";
                             }
                             else{
-                                $example = preg_replace('/`(.*)`/im','<p class="mono">$1</p>',$example);
+                                $example = preg_replace('/`(.*)`/im','<p class="orange">$1</p>',$example);
                                 echo "<p class='flow-text'>$example</p>";
                             }
                         }
@@ -63,10 +68,11 @@
                     }
                     else{
                         if(strpos($value, '.PNG') !== false){
-                            echo "<img class='materialboxed' src='img/$value'>";
+                            echo "<img src='img/$value'>";
                         }
                         else{
-                        $value = preg_replace('/`(.*?)`/im','<span class="mono">$1</span>',$value);
+                        $value = preg_replace('/`(.*?)`/im','<span style="font-weight:600;">$1</span>',$value);
+                        // echo $value;
                         echo "<p class='flow-text'>$value</p>";
                         }
                     }
@@ -77,7 +83,7 @@
         }
         ?>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>-->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>-->
 
 </html>

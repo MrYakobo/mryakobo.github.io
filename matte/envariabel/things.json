@@ -1,152 +1,99 @@
 {
-    "title":"Envariabelanalys",
-    "Gränsvärden":
-    {
-        "Kontinuitet":[
+    "title": "Envariabelanalys",
+    "Gränsvärden": {
+        "Kontinuitet": [
             "En funktion f är kontinuerlig om den \"hänger ihop\".",
-        "kontinuitet.PNG"
-    ],
-    "Derivata":[
-        "derivata.PNG"
-    ],
-        "Negationer":[
-            "Negationen till utsagan A betecknas ¬A, och är motsatsen till A.",[
-                "A: x ≥ 2 ⇒ ¬A: x < 2"
-            ]
-        ],
-        "Konjunktion":[
-            "A∧B är sant om A och B är sanna."
-        ],
-        "Disjunktion":[
-            "A∨B är sant om A eller B är sanna."
-        ],
-        "Tautologi":[
-            "En sammansatt utsaga är en tautologi/kontradiktion om den alltid är sann/falsk oberoende av de ingående utsagornas sanningsvärde.",
-            [
-                "(¬A∧(A∨B))∨A är varken tautologi eller kontradiktion. Se bild nedan:",
-                "tautologi.PNG"
-            ]
-        ],
-        "Implikation och ekvilalens":[
-            "Utsagan A ⇒ B (medför, om ... så är) kallas en implikation.",
-            "A kallas förutsättning (premiss, hypotes) och B kallas slutsats (konsekvens)",
-            [
-            "implikationer.PNG",
-            "ekvivalenstabell.PNG"
-            ]
-        ],
-        "Kvantorer":[
-            "∀: ”För varje”, ”för alla”",
-            "∃: ”Det finns (existerar) en/ett”",
-            [
-                "Utsagan A: ”Alla hundar kan skälla” kan skrivas som A: ∀ hund; hunden kan skälla",
-                "B: Det finns ett reellt tal x sådant att 2x = 4.<br>B: ∃ x ∈ R:2x = 4"
-
-            ]
+            "kontinuitet.PNG"
         ]
     },
-    "Mängder":{
-        "Viktiga begrepp om mängder":[
-            "Antalet element i en mängd A kallas mängdens kardinalitet och betecknas |A|.",
-            "Två mängder är lika om de innehåller samma element.",
-            "Den tomma mängden ∅ innehåller inga element.",
-            "Det finns alltid en grundmängd eller universum U."
+    "Derivata": {
+        "Derivatans definition": [
+            "derivata.PNG"
         ],
-        "Snitt och Union":[
-            "snittochunion.PNG"
+        "Implicit derivering": [
+            "Om y är jobbigt att lösa ut ur en ekvation (som i x&sup3; - y&sup3; - xy - x = 2) så kan man se y som en funktion av x och derivera med avseende på x, för att senare lösa ut y'."
         ],
-        "Mängddifferens och Produktmängd":[
-            "mangddifferens.PNG"
+        "Medelvärdessatsen":[
+            "medelvärdessatsen.PNG"
         ]
     },
-    "Induktion":{
-        "Induktionsstegen":[
-            "Ett påstående skall bevisas med hjälp av induktion, beroende på n.",
-            "Om påståendet är sant för `n = 1` och `n = p` är det också sant för `n = p + 1`. Enligt induktionsaxiomet är därför påståendet sant för alla n ≥ 1.",
-            [
-                "induktion.PNG"
-            ]
+    "Primitiva funktioner": {
+        "Partiell integration":[
+            "partiellintegration.PNG"
+        ],
+        "Variabelsubstitution":[
+            ["variabelsubstitution.PNG",
+            "variabelsubstitution2.PNG"]
+        ],
+        "PBU (partialbråksuppdelning)":[
+            "pbu.PNG"
+        ],
+        "Integration av rationella funktioner":[
+            "1. Gör polynomdivision om grad(T) > grad(N), faktorisera nämnare.<br>2. PBU (om det behövs).<br>3. Integrera!"
         ]
     },
-    "Delbarhet":{
-        "Euklides":[
-            "euklides.PNG"
+    "Integraler":{
+        "Integralkalkylens medelvärdessats":[
+            "integralkalkyl.PNG",
+            ["integralkalkyl2.PNG"]
         ],
-        "Diofantiska ekvationer":[
-            "Den diofantiska ekvationen `ax + by = c` har heltalslösningar OMM `SGD(a,b) | c`",
-            [
-                "diofantisk.PNG"
-            ]
+        "Generaliserade integraler":[
+            "En integral är generaliserad om gränserna på integralen ger upphov till problem som inte kan lösas direkt med simpel aritmetik, så som obegränsat intervall, division med noll etc.",
+            "generaliserad.PNG",
+            "Om gränsvärdet existerar för en generaliserad integral så kallas den `konvergent`, annars `divergent`.",
+            "konvergent1.PNG",
+            "konvergent2.PNG",
+            "Om en generaliserad integrals alla uppdelningar (som är generaliserade på endast ett sätt) är konvergenta så är integralen konvergent. &there4; Om en enda uppdelning är divergent så är hela integralen divergent.",
+            ["generaliseradExempel.PNG"]
         ],
-        "Ekvivalensklasser":[
-            "Två tal `a` och `b` tillhör samma ekvivalensklass om `a ≡ b (mod n)`, dvs de har samma rest vid division med `n`.",
-            [
-                "restklass.PNG"
-            ]
+        "Instängningssatsen":[
+            "instängning.PNG",
+            "Med hjälp av instängningssatsen så kan man bestämma konvergensen på en funktion genom att \"uppskatta\" den och hitta större/mindre funktioner som konvergensen lätt kan bestämmas på. Se exempel.",
+            ["instängningExempel.PNG"]
         ],
-        "Multiplikativ invers":[
-            "multiplikativ_invers.PNG"
+        "Båglängd":[
+            "båglängd.PNG"
+        ],
+        "Rotationsvolymer":[
+            "`Rotation kring x: `",
+            "rotX.PNG",
+            " `Rotation kring y: `",
+            "rotY.PNG"
+        ],
+        "Simpsons formel":[
+            "simpson.PNG"
         ]
     },
-    "Kombinatorik":{
-        "Permutationer":[
-            "#permutationer är #sätt att ordna en mängd med hänsyn till ordningen, `n!`"
+    "Differentialekvationer":{
+        "Linjära differentialekvationer":[
+            "Ekvationer av typen `y' + g(x)y = h(x)` löses genom att multiplicera ekvationen med den integrerande faktorn (som är `e<sup>G(x)</sup>, G'(x) = g(x)`), då vänsterledet kan skrivas om till `D(y*G(x))`. Integrera båda leden och lös ut y."
         ],
-        "\"Bulleformeln\"":[
-            "bulleformeln.PNG"
+        "Seperabla differentialekvationer":[
+            "Ekvationer av typen `g(y)y' = h(x)` löses genom att konstatera `y' = dy/dx`, multiplicera med dx i båda led och integrera. &there4; `&int;g(y)dy = &int;h(x)dx`"
+        ],
+        "Homogena linjära differentialekvationer med konstanta koefficienter":[
+            "Ekvationer av typen `y'' + a<sub>1</sub>y' + a<sub>0</sub>y = 0`.",
+            "homogen.PNG",
+            "Om det inte står 0 i HL så krävs en partikulärlösning till ekvationen. Dessa löses med hjälpfunktionen z(x).",
+            "partikulär e.PNG",
+            "partikulär cos.PNG",
+            "Om HL är en summa så kan man hitta en partikulärlösning till varje term och sedan summera dessa.<br>&there4; `y<sub>p</sub> = y<sub>p<sub>1</sub></sub> + y<sub>p<sub>2</sub></sub>`"
         ]
     },
-    "Grafer":{
-        "Allmän grafteori":[
-            "&sum;(∀ noders grad) = 2*(antal kanter)",
-        [
-            "grannmatris.PNG",
-            "eulerkrets.PNG",
-            "kromatiskt.PNG"
+    "Utvecklingar":{
+        "Taylors formel":[
+            "taylorsformel.PNG"
         ],
-        "Om man vill optimera det kromatiska talet så bör man börja färga i mitten."
-        ]
-    },
-    "Relationer och funktioner":{
-        "Funktion":[
-            "funktion.PNG"
+        "Maclaurins formel":[
+            "Maclaurins formel är ett specialfall av taylors formel med a = 0.",
+            "maclaurin.PNG",
+            "maclaurinRest.PNG",
+            "Formeln gäller så länge x &rarr; 0.",
+            "formler.PNG",
+            "Hindgren har sagt att man aldrig kommer behöva utveckla längre än till ordning 4 på tentan."
         ],
-        "Begrepp":[
-            "En funktion är `injektiv` om det för varje y finns högst ett x.",
-            "En funktion är `surjektiv` om det för varje y finns minst ett x.",
-            "En funktion är `bijektiv` (och `inverterbar`) om det för varje y finns exakt ett x.",
-            ["inverterbar.PNG"],
-            "Den `Cartesiska produkten` av två mängder är alla element som finns i båda mängderna."
-        ],
-        "Relationer":[
-            "relationerdef.PNG",
-            "En `ekvivalensrelation` på A är reflexiv, symmetrisk och transitiv",
-            "En `partiell ordningsrelation` på A är reflexiv, antisymmerisk och transitiv"
-        ],
-        "Faktorsatsen":[
-            "Om r är en rot till polynomet f(x) så är `(x-r)` en  faktor i f(x).",
-            "faktorsatsen.PNG",
-            [
-                "faktorsatsenExempel.PNG"
-            ]
-        ],
-        "Geometrisk Summa":[
-            "geometrisksumma.PNG"
-        ],
-        "Rationella funktioner":[
-            "Om en funktion f(x) kan bli odefinierad (ex 0 i nämnaren) så kallas det för en `rationell funktion`",
-            "rationellfunktion.PNG"
-        ],
-        "Teckenstudium":[
-            "Teckenstudium bör göras när en relation såsom bilden nedan skall undersökas.",
-            "teckenstudiumfunktion.PNG",
-            "teckenstudium.PNG"
-        ]
-    },
-    "Vinklar":{
-        "VIKTIGA VINKLAR":[
-            "<table><thead><th>Vinkel<th>sin<th>cos</thead><tr><td>π/6<td>½<td>√3/2<tr><td>π/4<td>1/√2<td>1/√2<tr><td>π/3<td>√3/2<td>½<tr><td>π/2<td>1<td>0</table>",
-            "viktigavinklar.PNG"
+        "Ordo":[
+            "ordo.PNG","ordoRäkneregler.PNG"
         ]
     }
 }
