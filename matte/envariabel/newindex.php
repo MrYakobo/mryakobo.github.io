@@ -40,7 +40,30 @@
         $j = json_decode(file_get_contents("things.json"),true);
         $title = $j["title"];
         unset($j["title"]);
-        echo "<h2 class='card-panel indigo darken-2 z-depth-1'>$title</h2>";
+        ?>
+        <h2 class='card-panel indigo darken-2 z-depth-1'><?= $title ?></h2>
+        <div class='yellow lighten-2 card-panel'>
+        <div class='row'>
+        <a class="col s12 l4 offset-l4 waves-effect waves-dark btn purple lighten-1 z-depth-2" href="analysformel.pdf" target="_blank">Formelblad</a>
+        </div>
+        <div class='row'>
+        <?php
+        $d = scandir(getcwd() . "/tentor");
+        rsort($d);
+        foreach($d as $file){
+            if(strpos($file,".pdf") > -1){
+                $name = "Tenta 20" . substr($file,2,2);
+                ?>
+                <div class='col s12 m4 l4'>
+                <a class='col s12 waves-effect waves-dark btn purple darken-2' target='_blank' href="<?= "tentor/$file" ?>"><?= $name ?></a>
+                </div>
+                <?php
+            }
+        }
+        ?>
+        </div>
+        </div>
+        <?php
         foreach($j as $topic => $props){
             echo "<div class='row card-panel teal'>";
             echo "<h2>$topic</h2>";
@@ -83,7 +106,7 @@
         }
         ?>
 </body>
-<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>-->
-<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
 
 </html>
