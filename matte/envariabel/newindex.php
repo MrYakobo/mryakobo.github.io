@@ -35,13 +35,13 @@
     </style>
 </head>
 
-<body style="width:100%;" class="container center-align teal lighten-4 white-text">
+<body style="width:95%;" class="container center-align teal lighten-4 white-text">
     <?php
         $j = json_decode(file_get_contents("things.json"),true);
         $title = $j["title"];
         unset($j["title"]);
         ?>
-        <h2 class='card-panel indigo darken-2 z-depth-1'><?= $title ?></h2>
+        <h3 class='card-panel indigo darken-2 z-depth-1'><?= $title ?></h3>
         <div class='yellow lighten-2 card-panel'>
         <div class='row'>
         <a class="col s12 l4 offset-l4 waves-effect waves-dark btn purple lighten-1 z-depth-2" href="analysformel.pdf" target="_blank">Formelblad</a>
@@ -66,14 +66,19 @@
         <?php
         foreach($j as $topic => $props){
             echo "<div class='row card-panel teal'>";
-            echo "<h2>$topic</h2>";
+            if(strlen($topic) > 15){
+                echo "<h4>$topic</h4>";
+            }
+            else{
+                echo "<h2>$topic</h2>";
+            }
             foreach($props as $propTitle => $propValue){
                 $c = "teal";
                 if(mb_strtoupper($propTitle, 'utf-8') == $propTitle)
                     $c = "red";
                     
                 echo "<div style='padding-bottom:2px;' class='card teal darken-1 z-depth-2'>";
-                echo "<h3 class='card-panel $c darken-3 z-depth-3'>$propTitle</h3>";
+                echo "<h4 class='card-panel $c darken-3 z-depth-3'>$propTitle</h4>";
                 foreach($propValue as $value){
                     if(is_array($value)){
                         echo "<div style='padding-bottom:2px;' class='card purple darken-3 z-depth-4'><h4 class='card-panel purple darken-4 z-depth-4'>Exempel</h4>";
