@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#2793d6">
-    <link rel="icon" href="icon.png">
+    <link rel="icon" href="../icon.png">
     <title>Viktiga saker tills tentan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <style>
@@ -42,28 +42,37 @@
         unset($j["title"]);
         ?>
         <h3 class='card-panel indigo darken-2 z-depth-1'><?= $title ?></h3>
-        <div class='yellow lighten-2 card-panel'>
-        <div class='row'>
-        <a class="col s12 l4 offset-l4 waves-effect waves-dark btn purple lighten-1 z-depth-2" href="analysformel.pdf" target="_blank">Formelblad</a>
-        </div>
-        <div class='row'>
+        
         <?php
-        $d = scandir(getcwd() . "/tentor");
-        rsort($d);
-        foreach($d as $file){
-            if(strpos($file,".pdf") > -1){
-                $name = "Tenta 20" . substr($file,2,2);
-                ?>
-                <div class='col s12 m4 l4'>
-                <a class='col s12 waves-effect waves-dark btn purple darken-2' target='_blank' href="<?= "tentor/$file" ?>"><?= $name ?></a>
-                </div>
-                <?php
-            }
+        if(is_file("analysformel.pdf")){
+            ?>
+            <div class='yellow lighten-2 card-panel'>
+            <div class='row'>
+            <a class="col s12 l4 offset-l4 waves-effect waves-dark btn purple lighten-1 z-depth-2" href="analysformel.pdf" target="_blank">Formelblad</a>
+            </div>
+            <?php
         }
-        ?>
-        </div>
-        </div>
-        <?php
+
+        if(is_dir("tentor")){
+            echo "<div class='row'>";
+            $d = scandir(getcwd() . "/tentor");
+            rsort($d);
+            foreach($d as $file){
+                if(strpos($file,".pdf") > -1){
+                    preg_match("/\d{2}/", $file, $matches);
+                    $name = "Tenta 20" . $matches[0];
+            ?>
+                    <div class='col s12 m4 l4'>
+                    <a class='col s12 waves-effect waves-dark btn purple darken-2' target='_blank' href="<?= "tentor/$file" ?>"><?= $name ?></a>
+                    </div>
+            <?php
+                }
+            }
+            ?>
+            </div>
+            </div>
+            <?php
+        }
         foreach($j as $topic => $props){
             echo "<div class='row card-panel teal'>";
             if(strlen($topic) > 15){

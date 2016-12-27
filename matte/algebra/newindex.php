@@ -7,7 +7,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#2793d6">
-    <link rel="icon" href="icon.png">
+    <link rel="icon" href="../icon.png">
     <title>Viktiga saker tills tentan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
     <style>
@@ -28,25 +28,66 @@
             border-radius: 2px;
             padding: 2px;
         }
+
+        span.flow-text{
+            vertical-align: 100%;
+        }
     </style>
 </head>
 
-<body style="width:100%;" class="container center-align teal lighten-4 white-text">
+<body style="width:95%;" class="container center-align teal lighten-4 white-text">
     <?php
         $j = json_decode(file_get_contents("things.json"),true);
         $title = $j["title"];
         unset($j["title"]);
-        echo "<h2 class='card-panel purple darken-2 z-depth-1'>$title</h2>";
+        ?>
+        <h3 class='card-panel indigo darken-2 z-depth-1'><?= $title ?></h3>
+        
+        <?php
+        if(is_file("analysformel.pdf")){
+            ?>
+            <div class='yellow lighten-2 card-panel'>
+            <div class='row'>
+            <a class="col s12 l4 offset-l4 waves-effect waves-dark btn purple lighten-1 z-depth-2" href="analysformel.pdf" target="_blank">Formelblad</a>
+            </div>
+            <?php
+        }
+
+        if(is_dir("tentor")){
+            echo "<div class='row'>";
+            $d = scandir(getcwd() . "/tentor");
+            rsort($d);
+            foreach($d as $file){
+                if(strpos($file,".pdf") > -1){
+                    preg_match("/\d{2}/", $file, $matches);
+                    $name = "Tenta 20" . $matches[0];
+            ?>
+                    <div class='col s12 m4 l4'>
+                    <a class='col s12 waves-effect waves-dark btn purple darken-2' target='_blank' href="<?= "tentor/$file" ?>"><?= $name ?></a>
+                    </div>
+            <?php
+                }
+            }
+            ?>
+            </div>
+            </div>
+            <?php
+        }
         foreach($j as $topic => $props){
             echo "<div class='row card-panel teal'>";
-            echo "<h2>$topic</h2>";
+            if(strlen($topic) > 15){
+                echo "<h4>$topic</h4>";
+            }
+            else{
+                echo "<h2>$topic</h2>";
+            }
             foreach($props as $propTitle => $propValue){
                 $c = "teal";
                 if(mb_strtoupper($propTitle, 'utf-8') == $propTitle)
                     $c = "red";
                     
                 echo "<div style='padding-bottom:2px;' class='card teal darken-1 z-depth-2'>";
-                echo "<h3 class='card-panel $c darken-3 z-depth-3'>$propTitle</h3>";
+                echo "<h4 class='card-panel $c darken-3 z-depth-3'>$propTitle</h4>";
                 foreach($propValue as $value){
                     if(is_array($value)){
                         echo "<div style='padding-bottom:2px;' class='card purple darken-3 z-depth-4'><h4 class='card-panel purple darken-4 z-depth-4'>Exempel</h4>";
@@ -56,7 +97,7 @@
                                 echo "<img src='img/$example'>";
                             }
                             else{
-                                $example = preg_replace('/`(.*)`/im','<p class="mono">$1</p>',$example);
+                                $example = preg_replace('/`(.*)`/im','<p class="orange">$1</p>',$example);
                                 echo "<p class='flow-text'>$example</p>";
                             }
                         }
@@ -67,7 +108,8 @@
                             echo "<img src='img/$value'>";
                         }
                         else{
-                        $value = preg_replace('/`(.*?)`/im','<span class="mono">$1</span>',$value);
+                        $value = preg_replace('/`(.*?)`/im','<span style="font-weight:600;">$1</span>',$value);
+                        // echo $value;
                         echo "<p class='flow-text'>$value</p>";
                         }
                     }
