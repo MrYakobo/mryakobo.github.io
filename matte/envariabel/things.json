@@ -66,7 +66,7 @@
     },
     "Differentialekvationer":{
         "Linjära differentialekvationer":[
-            "Ekvationer av typen `y' + g(x)y = h(x)` löses genom att multiplicera ekvationen med den integrerande faktorn (som är `e<sup>G(x)</sup>, G'(x) = g(x)`), då vänsterledet kan skrivas om till `D(y*G(x))`. Integrera båda leden och lös ut y."
+            "Ekvationer av typen `y' + g(x)y = h(x)` löses genom att multiplicera ekvationen med den integrerande faktorn (som är `e<sup>G(x)</sup>, G'(x) = g(x)`), då vänsterledet kan skrivas om till `D(y*e<sup>G(x)</sup>)`. Integrera båda leden och lös ut y."
         ],
         "Seperabla differentialekvationer":[
             "Ekvationer av typen `g(y)y' = h(x)` löses genom att konstatera `y' = dy/dx`, multiplicera med dx i båda led och integrera. &there4; `&int;g(y)dy = &int;h(x)dx`"
