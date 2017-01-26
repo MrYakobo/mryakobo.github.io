@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>&star;~ Jakob Lindskogs officiella hemsida ~&star;</title>
+  <meta charset="utf-8">
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="material/css/materialize.min.css" media="screen,projection" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="material/fonts/material-icons.css">
+  <link rel="icon" href="favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:700" rel="stylesheet">
+  <meta name="theme-color" content="#3a24a5">
+  <style>
+    body {
+      overflow-y: scroll;
+    }
+    
+    .collapsible-header {
+      border-bottom: 0 !important;
+    }
+    
+    i {
+      vertical-align: middle;
+    }
+    
+    @media screen and (max-width: 400px) {
+      .container {
+        width: 94%;
+      }
+      h1 {
+        font-size: 37px;
+        margin: 5px auto;
+      }
+    }
+    
+    .pt-font {
+      font-family: 'PT Sans', sans-serif;
+    }
+    
+    .material-icons {
+      transition-duration: .3s;
+      transition-property: transform;
+    }
+    
+    a:hover .material-icons {
+      transform: translateY(-35%) scale(1.3);
+    }
+    
+    body::-webkit-scrollbar {
+      width: 1em;
+    }
+    
+    body::-webkit-scrollbar-track {
+      -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    }
+    
+    body::-webkit-scrollbar-thumb {
+      background-color: #ddd;
+      outline: 1px solid #aaa;
+    }
+    
+    body::-webkit-scrollbar-thumb:hover {
+      background-color: #eee;
+      outline: 1px solid #aaa;
+    }
+    
+    body::-webkit-scrollbar-thumb:active {
+      background-color: #fff;
+      outline: 1px solid#eee;
+    }
+    
+    h1 i.material-icons {
+      font-size: 1em;
+    }
+    
+    i.animation {
+      animation: slidein 8s linear infinite normal, wobble .4s linear infinite alternate;
+      position: fixed;
+      font-size: 50px;
+      color: #000;
+      transform: rotate(90deg);
+      top: 0px;
+      /*z-index: -1;*/
+      text-shadow: 0px 0px 10px #fff;
+    }
+    
+    @keyframes wobble {
+      from {
+        transform: rotate(90deg) translateX(0%) scale(5);
+        color: red;
+      }
+      to {
+        transform: rotate(90deg) translateX(1000%) scale(1);
+        color: blue;
+      }
+    }
+    
+    @keyframes slidein {
+      from {
+        left: -8%;
+      }
+      to {
+        left: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body class="green accent-4">
+  <main class="container valign">
+    <div class="card-panel blue-text center-align pt-font">
+      <h1>JakobLindskog.tk</h1>
+    </div>
+    <i class="material-icons animation hide">flight</i>
+    <div class="row">
+      <ul class="collapsible popout" data-collapsible="accordion">
+        <li>
+          <div class="collapsible-header green lighten-1 white-text"><i class="material-icons">fingerprint</i>Läs om mig</div>
+          <div class="collapsible-body">
+            <div class="col s12 card-panel pink lighten-2 white-text z-depth-1 center-align">
+              <h2 class="card-panel pink darken-2 z-depth-2">Hej!</h2>
+              <div class="row">
+                <div class="col s12 l6">
+                  <div class="card-panel green">
+                    <p>Varmt välkommen till min hemsida. Hoppas du kommer gilla din vistelse här.</p>
+                  </div>
+                  <div class="card-panel">
+                    <p class="red-text">De icke-existerande poetiska texterna utesluter ej min intelligens.</p>
+                  </div>
+                  <div class="card-panel yellow accent-3">
+                    <p>Jag gillar den här kortlayouten. Korten ger en go känsla, typ.</p>
+                  </div>
+                </div>
+                <div class="col s12 l6">
+                  <div class="card-panel">
+                    <img class="circle" height="200" src="jakob.jpg">
+                    <div class="card-panel pink lighten-3">
+                      <h5>Den här hemsidan använder <span style="cursor: pointer; text-decoration: underline;" class="red-text"
+                          onclick="$('#search').val('materialize');$('#search').focus()">materialize</span>, en riktigt bra
+                        CMS.
+                      </h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="collapsible-header teal lighten-1 white-text"><i class="material-icons">extension</i>Mina projekt</div>
+          <div class="collapsible-body white">
+            <div class="row">
+              <div class="col s12 l6 offset-l1">
+                <div class="card-panel z-depth-2">
+                  <h4><a href="Efternamnsgenerator">Efternamnsgenerator</a></h4>
+                  <p>Ett projekt som begrundade sig på ett simpelt koncept - att kunna generera nya ord av gamla var en dröm
+                    som jag personligen har tyckt varit väldigt intressant under en lång tid.</p>
+                </div>
+              </div>
+              <div class="col s12 l4">
+                <div class="card-panel z-depth-2">
+                  <h4><a href="https://young-harbor-47227.herokuapp.com/">Folkbibeln</a></h4>
+                  <p>Ett första och ganska naivt försök till att göra en API uppbyggd på distruberade JSON-filer, något som
+                    skulle visa sig ej vara optimalt.
+                    <br><br> Servern skriven i <a href="https://nodejs.org/">Node</a>, källkoden tillgänglig <a href="https://git.heroku.com/folkbibeln.git">här.</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="white-text">
+          <div class="collapsible-header blue"><i class="material-icons">public</i>Socialt</div>
+          <div class="collapsible-body white center-align">
+            <div class="row">
+              <div class="col s12 red-text center-align">
+                <p>Vad kul att du vill socialisera med mig! Nedan finner du diverse länkar där du kan nå mig.</p>
+              </div>
+              <div class="col s12 l4">
+                <a href="http://facebook.com/mr.yakobo" target="_blank" class="white-text">
+                  <div class="card-panel white blue-text">
+                    <i class="material-icons">person</i> Facebook
+                  </div>
+                </a>
+              </div>
+              <div class="col s12 l4">
+                <a href="https://se.timeedit.net/web/hh/db1/schema/ri1w7XYQ60ZZ2YQvQQ070181y6Y3757.html" target="_blank" class="white-text">
+                  <div class="card-panel pink-text">
+                    <i class="material-icons">school</i> Högskolan i Halmstad
+                  </div>
+                </a>
+              </div>
+              <div class="col s12 l4">
+                <a href="http://instagram.com/mryakobo" target="_blank" class="white-text">
+                  <div class="card-panel green-text">
+                    <i class="material-icons">photo_camera</i> Instagram
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col s12 l6">
+                <a href="https://www.youtube.com/user/Yaxqb" target="_blank" class="white-text">
+                  <div class="card-panel red accent-2">
+                    <i class="material-icons">videocam</i> Youtube
+                  </div>
+                </a>
+              </div>
+              <div class="col s12 l6">
+                <a href="#" class="white-text tooltipped" data-position="top" data-delay="0" data-tooltip="TheLegend27 @ yakobopushers">
+                  <div class="card-panel purple">
+                    <i class="material-icons">trending_up</i> Clash Royale
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="collapsible-header purple lighten-1 white-text"><i class="material-icons">casino</i>Experiment</div>
+          <div class="collapsible-body white">
+            <div class="row">
+              <div class="col s12">
+                <div class="card-panel center-align">
+                  <input type="checkbox" class="filled-in" id="flight" onclick="$('.animation').toggleClass('hide')">
+                  <label
+                    for="flight">Aktivera flygande flygplan på hemsidan.</label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    </div>
+
+    <div class="row card-panel white center-align z-depth-1">
+      <p class="blue-text" style="font-size:1.35em;">Om du behöver söka på Google så kan du göra det här.</p>
+      <div class="input-field inline">
+        <input id="search" type="text" §>
+        <label for="search">Sök på Google</label>
+      </div>
+
+      <a class="waves-effect waves-light btn" id="searchBtn" href="" target="_self"><i class="material-icons">search</i></a>
+    </div>
+
+    </div>
+  </main>
+  <!--Import jQuery before materialize.js-->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="material/js/materialize.min.js"></script>
+  <script>
+    $('.collapsible').collapsible();
+    $('.tooltipped').tooltip();
+
+    // Update the link on the search button
+    setInterval(function () {
+      $("#searchBtn").attr("href", "https://www.google.se/#q=" + $("#search").val());
+    }, 100);
+
+    $("#search").keydown(function (e) {
+      if (e.keyCode == 13) {
+        document.getElementById('searchBtn').click();
+      }
+    });
+  </script>
+</body>
+
+</html>
