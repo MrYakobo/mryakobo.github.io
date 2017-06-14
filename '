@@ -59,7 +59,7 @@
 </body>
 <script>
 function download(b){
-	var s = b ? "Vad gött, då kan du ladda ner samtliga nycklar här nedan:" : "Vad tråkigt att du inte känner dig trygg med att jag fjärrstyr din dator. Du kan roa dig med det <a href='../games'>här</a> spelet istället."
+	var s = b ? "Vad gött, då kan du ladda ner samtliga nycklar här nedan:" : "Vad tråkigt att du inte känner dig trygg med att jag fjärrstyr din dator. Du kan roa dig med det <a href='../spel'>här</a> istället."
 	document.getElementById('answer').innerHTML = s;
 	$(".answer").addClass('hide');
 	$(b ? ".yes" : ".no").removeClass("hide");

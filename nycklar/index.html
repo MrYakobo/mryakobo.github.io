@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>&star;~ Jakob Lindskogs officiella hemsida ~&star; | Nycklar</title>
+  <meta charset="utf-8">
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="../material/css/materialize.min.css" media="screen,projection" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="../material/fonts/material-icons.css">
+  <link rel="icon" href="../favicon.png">
+  <link href="https://fonts.googleapis.com/css?family=PT+Sans:700" rel="stylesheet">
+  <meta name="theme-color" content="#3a24a5">
+  <style>
+	a.big, i.material-icons{
+		font-size: 2em !important;
+	}
+	i.material-icons{
+		vertical-align: text-bottom
+	}
+  </style>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="../material/js/materialize.min.js"></script>
+</head>
+<body class="blue darken-4 container">
+
+<div class="card-panel">
+		<h1 class="center-align">Public keys</h1>
+		<p class="flow-text">Nedan finner du nycklar som du kan placera i filen <code class="yellow lighten-4">~/.ssh/authorized_keys</code> om du vill att jag ska hembesöka din dator! Se till du placerar filens innehåll på en enda rad samt att du använder ett <code>UNIX</code> eller <code>GNU/Linux</code>-operativsystem.</p>
+
+		<div class="center-align container">
+			<span class="flow-text">Följande datorer kommer att få access till ditt system:</span>
+		<a class="purple-text big" href="taurinus_rsa.pub">
+			<div class="card-panel waves-effect waves-purple">
+				<i class="material-icons">desktop_windows</i>&nbsp;&nbsp;Taurinus
+			</div>
+		</a>
+
+		<a class="blue-text big" href="latitude_rsa.pub">
+			<div class="card-panel waves-effect waves-teal">
+				<i class="material-icons">laptop_chromebook</i>&nbsp;&nbsp;Latitude
+			</div>
+		</a>
+	  </div>
+	  <div class="center-align">
+	  <p class="flow-text">Känns det bra?</p>
+	  <button class="answer btn green darken-1 white-text" onclick="download(true)">Ja!</button>
+	  <button class="answer btn red white-text" onclick="download(false)">Nej</button>
+	  <h5 id="answer"></h5>
+	  <a href="authorized_keys" class="yes hide">
+		  <div class="card-panel center-align waves-effect blue lighten-1 waves-darken white-text"><i class="material-icons">file_download</i></div>
+	  </a>
+	  </div>
+</div>
+<div class="card-panel">
+	<p class="flow-text">Obs! Om du <code class="red-text">på riktigt</code> vill ge mig access till din dator så får du gärna skicka ett mail till <a href="mailto:jakob.lindskog@gmail.com">jakob.lindskog@gmail.com</a> med din privata och publika ip-adress.</p>
+	<p>(din privata ip kan du få fram genom <code class="yellow lighten-4">ip addr show</code>, publika genom <a href="http://whatsmyip.org">whatsmyip.org</a>)
+</div>
+</body>
+<script>
+function download(b){
+	var s = b ? "Vad gött, då kan du ladda ner samtliga nycklar här nedan:" : "Vad tråkigt att du inte känner dig trygg med att jag fjärrstyr din dator. Du kan roa dig med det <a href='../spel'>här</a> istället."
+	document.getElementById('answer').innerHTML = s;
+	$(".answer").addClass('hide');
+	$(b ? ".yes" : ".no").removeClass("hide");
+}
+
+</script>
+</html>
