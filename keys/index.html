@@ -29,6 +29,7 @@
 		<p class="flow-text">Nedan finner du nycklar som du kan placera i filen <code class="yellow lighten-4">~/.ssh/authorized_keys</code> om du vill att jag ska hembesöka din dator! Se till du placerar filens innehåll på en enda rad samt att du använder ett <code>UNIX</code> eller <code>GNU/Linux</code>-operativsystem.</p>
 
 		<div class="center-align container">
+			<span class="flow-text">Följande datorer kommer att få access till ditt system:</span>
 		<a class="purple-text big" href="taurinus_rsa.pub">
 			<div class="card-panel waves-effect waves-purple">
 				<i class="material-icons">desktop_windows</i>&nbsp;&nbsp;Taurinus
@@ -41,10 +42,28 @@
 			</div>
 		</a>
 	  </div>
+	  <div class="center-align">
+	  <p class="flow-text">Känns det bra?</p>
+	  <button class="answer btn green darken-1 white-text" onclick="download(true)">Ja!</button>
+	  <button class="answer btn red white-text" onclick="download(false)">Nej</button>
+	  <h5 id="answer"></h5>
+	  <a href="authorized_keys" class="yes hide">
+		  <div class="card-panel center-align waves-effect blue lighten-1 waves-darken white-text"><i class="material-icons">file_download</i></div>
+	  </a>
+	  </div>
 </div>
 <div class="card-panel">
-	<p class="flow-text">Obs! Om du <code class="red-text">på riktigt</code> vill ge mig access till din dator så får du gärna skicka ett mail till <a href="mailto:jakob.lindskog@gmail.com">jakob.lindskog@gmail.com</a> med din privata/publika ip-adress.</p>
+	<p class="flow-text">Obs! Om du <code class="red-text">på riktigt</code> vill ge mig access till din dator så får du gärna skicka ett mail till <a href="mailto:jakob.lindskog@gmail.com">jakob.lindskog@gmail.com</a> med din privata och publika ip-adress.</p>
 	<p>(din privata ip kan du få fram genom <code class="yellow lighten-4">ip addr show</code>, publika genom <a href="http://whatsmyip.org">whatsmyip.org</a>)
 </div>
 </body>
+<script>
+function download(b){
+	var s = b ? "Vad gött, då kan du ladda ner samtliga nycklar här nedan:" : "Vad tråkigt att du inte känner dig trygg med att jag fjärrstyr din dator. Du kan roa dig med det <a href='../games'>här</a> spelet istället."
+	document.getElementById('answer').innerHTML = s;
+	$(".answer").addClass('hide');
+	$(b ? ".yes" : ".no").removeClass("hide");
+}
+
+</script>
 </html>

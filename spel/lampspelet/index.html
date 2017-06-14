@@ -1,0 +1,59 @@
+<html>
+
+<head><meta name="theme-color" content="#0066b1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=../../material/css/materialize.css>
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <meta charset="utf-8">
+    <style>
+        body {
+            text-align: center;
+        }
+        
+        * {
+            transition-duration: .25s;
+        }
+        
+        img {
+            opacity: .5;
+	    cursor:pointer;
+        }
+        
+        img:hover {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="h1">Det här är en släckt lampa.</h1>
+    <img id="img" src="0.png" onclick="change()">
+    <audio src="tie.mp3" id="aud"></audio>
+</body>
+<script>
+    var i = 0;
+    var headers = ["Det här är en släckt lampa.", "Grattis! Du tände lampan!", "<span style='font-family:\"Indie Flower\",cursive'>Hoppsan...det blev ett träd</span>"];
+
+    function log(a) {
+        console.log(a);
+    }
+
+    function change() {
+        i++;
+        i = i % 3;
+        if (i == 1) {
+            //Why does this line not work??? It's a mystery
+            //document.body.style.background = "#f0e707";
+            //log(document.body.style.background);
+        }
+        if (i == 2) {
+            document.getElementById("aud").play();
+        }
+
+        document.getElementById("img").setAttribute("src", i + ".png");
+        //document.body.style.background = "#006fce";
+        document.getElementById("h1").innerHTML = headers[i];
+    }
+</script>
+
+</html>
