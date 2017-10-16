@@ -293,11 +293,14 @@
     });
    $('#namnsdag span').html(namnsdag.greeting())
    for(var key in localStorage){
-       if(localStorage.getItem(key)){
-           $(key).toggleClass('hide')
-           $(key.substring(1)).val(true)
-       }
-   
+       if(!localStorage.hasOwnProperty(key)) continue;
+       if(eval(localStorage.getItem(key))){
+           $(key).removeClass('hide')
+           $('#' + key.substring(1) + '-toggle').prop('checked', true)
+       } else{
+           $('#' + key.substring(1) + '-toggle').prop('checked', false)
+        }
+   }
    function toggle(selector){
        localStorage.setItem(selector, $(selector).hasClass('hide'))
        $(selector).toggleClass('hide')
