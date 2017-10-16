@@ -116,6 +116,9 @@
         left: 100%;
       }
     }
+   #namnsdag{
+       vertical-align:middle;
+   }
   </style>
 </head>
 
@@ -124,6 +127,10 @@
     <div class="card-panel blue-text center-align pt-font">
       <h1>JakobLindskog.tk</h1>
     </div>
+      <div id="namnsdag" class="hide card-panel indigo accent-1 center-align" style="font-size:1.5em">
+          <i class="material-icons white-text" style="text-shadow: 0px -2px 1px #ffbd00;">cake</i>
+          <span class="white-text"></span>
+      </div>
     <i class="material-icons animation hide">flight</i>
     <div class="row">
       <ul class="collapsible popout" data-collapsible="accordion">
@@ -221,10 +228,19 @@
           <div class="collapsible-body white">
             <div class="row">
               <div class="col s12">
-                <div class="card-panel center-align">
-                  <input type="checkbox" class="filled-in" id="flight" onclick="$('.animation').toggleClass('hide')">
+                  <div class="card-panel center-align ">
+                      <div class="row">
+                      <div class="col s6">
+                  <input type="checkbox" class="filled-in" id="animation-toggle" onclick="toggle('.animation')">
                   <label
-                    for="flight">Aktivera flygande flygplan på hemsidan.</label>
+                    for="animation-toggle">Aktivera flygande flygplan på hemsidan.</label>
+                      </div>
+                      <div class="col s6">
+                  <input type="checkbox" class="filled-in" id="namnsdag-toggle" onclick="toggle('#namnsdag')">
+                  <label
+                    for="namnsdag-toggle">Aktivera namnsdagsnotis</label>
+                      </div>
+                      </div>
                 </div>
               </div>
             </div>
@@ -260,6 +276,7 @@
   <!--Import jQuery before materialize.js-->
   <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script type="text/javascript" src="material/js/materialize.min.js"></script>
+  <script type="text/javascript" src="namnsdag.min.js"></script>
   <script>
     $('.collapsible').collapsible();
     $('.tooltipped').tooltip();
@@ -274,6 +291,17 @@
         document.getElementById('searchBtn').click();
       }
     });
+   $('#namnsdag span').html(namnsdag.greeting())
+   for(var key in localStorage){
+       if(localStorage.getItem(key)){
+           $(key).toggleClass('hide')
+           $(key.substring(1)).val(true)
+       }
+   
+   function toggle(selector){
+       localStorage.setItem(selector, $(selector).hasClass('hide'))
+       $(selector).toggleClass('hide')
+   }
   </script>
 </body>
 
